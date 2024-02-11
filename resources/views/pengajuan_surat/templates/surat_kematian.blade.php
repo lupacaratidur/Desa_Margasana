@@ -50,7 +50,7 @@
 
     <!-- Kop Surat -->
     <div align="center" style="border-bottom: 2px solid #000000; padding-bottom: 20px; margin-top: -60px !important">
-        <img src="https://user-images.githubusercontent.com/80609220/232207469-306c87a9-e1d1-489b-8560-33789fbe1abf.png"
+        <img src="https://raw.githubusercontent.com/lupacaratidur/Desa_Margasana/main/public/img/kop-surat.png"
             width="100%" alt="">
     </div>
 
@@ -173,14 +173,10 @@
 
     <!-- Tanda Tangan -->
     <div style="width: 100%;">
-        <div align="center" style="width: 200px; position: relative; right: -30em" class="fs-1">
+        <div align="center" style="width: 250px; position: relative; right: -27em" class="fs-1">
             <p>Margasana, {{ \Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</p>
-            <p style="margin-top: -10px !important">Kepala Desa Sumerak</p>
-            <img style="margin-top: -2em !important"
-                src="https://user-images.githubusercontent.com/80609220/232229954-3db86399-39da-41ed-aeb4-f3bf7ee83198.png"
-                width="230" alt="">
-
-            <p style="margin-top: -30px !important">KUMARIYAH, S.Pd.MSi</p>
+            <p style="margin-top: -10px !important">Kepala Desa Margasana</p>
+            <br <br <br <br <br <p style="margin-top: -10px !important">DODIT ARI WIBOWO, S.Farm.,Apt</p>
         </div>
     </div>
 </body>

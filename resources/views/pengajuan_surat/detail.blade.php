@@ -61,14 +61,6 @@
                     </tr>
                     <tr>
                         <td class="w-[40%] lg:w-[15%] font-bold">
-                            No KK
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>{{ $surat->no_kk }} <br> <br></td>
-                    </tr>
-                    <tr>
-                        <td class="w-[40%] lg:w-[15%] font-bold">
                             Tempat tanggal lahir
                         </td>
                     </tr>
@@ -106,6 +98,14 @@
                     </tr>
                     <tr>
                         <td>{{ $surat->keperluan }} <br> <br></td>
+                    </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Status
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ $surat->status }} <br> <br></td>
                     </tr>
                     <tr>
                         <td class="w-[40%] lg:w-[15%] font-bold">
@@ -482,7 +482,7 @@
             </div>
         </div>
 
-         <div class="bg-white py-6 px-9 mb-5 rounded-lg w-full">
+        <div class="bg-white py-6 px-9 mb-5 rounded-lg w-full">
             <div class="overflow-x">
                 <table class="w-full bg-divide-y overflow-hidden">
 

@@ -49,7 +49,8 @@
 
     <!-- Kop Surat -->
     <div align="center" style="border-bottom: 2px solid #000000; padding-bottom: 20px; margin-top: -60px !important">
-        <img src="{{ asset('img/kop-surat.png') }}" width="100%" alt="">
+        <img src="https://raw.githubusercontent.com/lupacaratidur/Desa_Margasana/main/public/img/kop-surat.png"
+            width="100%" alt="">
     </div>
 
     <!-- No. Kode Desa -->
@@ -74,7 +75,7 @@
         </table> --}}
 
         <div class="fw-bold fs-1 text-uppercase">
-            <span style="border: 1px solid black; padding: 10px"> Surat Keterangan Pengantar</span>
+            <span style="border: 1px solid black; padding: 10px"> Surat Keterangan/Pengantar</span>
         </div>
         <p class="fs-1">Nomor : {{ $surat->nomor_surat }}</p>
     </div>
@@ -82,7 +83,8 @@
     <!-- Content -->
 
     <div style="margin-top: 50px;">
-        <div class="fs-1" style="margin-bottom: 10px;">Yang bertanda tangan dibawah ini menerangkan bahwa :</div>
+        <div class="fs-1" style="margin-bottom: 10px;">Yang bertanda tangan dibawah ini atas nama Kepala Desa
+            margasana Kecamatan Jatilawang Kabupaten Banyumas menerangkan bahwa :</div>
         <table width="100%">
             <tr>
                 <td width="35%" class="fs-1">Nama</td>
@@ -93,14 +95,6 @@
                 <td class="fs-1"> : {{ $surat->ttl }}</td>
             </tr>
             <tr>
-                <td width="35%" class="fs-1">NIK</td>
-                <td class="fs-1"> : {{ $surat->nik }}</td>
-            </tr>
-            <tr>
-                <td width="35%" class="fs-1">NO KK</td>
-                <td class="fs-1"> : {{ $surat->no_kk }}</td>
-            </tr>
-            <tr>
                 <td width="35%" class="fs-1">Kewarganegaraan & Agama</td>
                 <td class="fs-1"> : {{ $surat->negara_agama }}</td>
             </tr>
@@ -109,8 +103,16 @@
                 <td class="fs-1"> : {{ $surat->pekerjaan }}</td>
             </tr>
             <tr>
-                <td width="35%" class="fs-1">Alamat</td>
+                <td width="35%" class="fs-1">Status</td>
+                <td class="fs-1"> : {{ $surat->status }}</td>
+            </tr>
+            <tr>
+                <td width="35%" class="fs-1">Tempat Tinggal</td>
                 <td class="fs-1"> : {{ $surat->alamat }}</td>
+            </tr>
+            <tr>
+                <td width="35%" class="fs-1">NIK</td>
+                <td class="fs-1"> : {{ $surat->nik }}</td>
             </tr>
             <tr>
                 <td width="35%" class="fs-1">Keperluan</td>
@@ -135,14 +137,10 @@
     <br>
     <!-- Tanda Tangan -->
     <div style="width: 100%;">
-        <div align="center" style="width: 200px; position: relative; right: -30em" class="fs-1">
+        <div align="center" style="width: 250px; position: relative; right: -27em" class="fs-1">
             <p>Margasana, {{ \Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</p>
-            <p style="margin-top: -10px !important">Kepala Desa Sumerak</p>
-            <img style="margin-top: -2em !important"
-                src="https://user-images.githubusercontent.com/80609220/232229954-3db86399-39da-41ed-aeb4-f3bf7ee83198.png"
-                width="230" alt="">
-
-            <p style="margin-top: -30px !important">KUMARIYAH, S.Pd.MSi</p>
+            <p style="margin-top: -10px !important">Kepala Desa Margasana</p>
+            <br <br <br <br <br <p style="margin-top: -10px !important">DODIT ARI WIBOWO, S.Farm.,Apt</p>
         </div>
     </div>
 </body>

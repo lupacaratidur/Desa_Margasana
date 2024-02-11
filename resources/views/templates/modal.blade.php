@@ -98,14 +98,14 @@
     <div class="dialog-body-buat-surat mb-4 text-center">
         <h1 class="text-xl lg:text-2xl font-semibold text-dark mb-4">Pilih Jenis Surat</h1>
 
-        <div class="flex flex-col lg:flex-row pb-10 px-10 justify-center w-full">
+        <div class="flex flex-col lg:flex-row pb-1 px-10 justify-center w-full">
             <div class="w-full mb-3">
                 <a href="{{ route('pengajuan-surat.create', ['surat' => 'keterangan']) }}">
                     <div
                         class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5">
                         <img class="w-[70px] text-center lg:w-[100px] mx-auto"
                             src="{{ asset('/img/keterangan_pengantar.png') }}" alt="">
-                        <p class="py-1 text-md text-dark">Keterangan</p>
+                        <p class="py-1 text-md text-dark">Surat Keterangan</p>
                     </div>
                 </a>
             </div>
@@ -115,7 +115,7 @@
                         class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5">
                         <img class="w-[70px] text-center lg:w-[90px] mx-auto" src="{{ asset('/img/kelahiran.png') }}"
                             alt="">
-                        <p class="py-1 text-md text-dark">Kelahiran</p>
+                        <p class="py-1 text-md text-dark">Surat Kelahiran</p>
                     </div>
                 </a>
             </div>
@@ -125,7 +125,29 @@
                         class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5">
                         <img class="w-[70px] text-center lg:w-[160px] mx-auto" src="{{ asset('/img/kematian.png') }}"
                             alt="">
-                        <p class="py-1 text-md text-dark">Kematian</p>
+                        <p class="py-1 text-md text-dark">Surat Kematian</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="flex flex-col lg:flex-row pb-5 px-10 justify-center w-full">
+            <div class="w-full mb-3">
+                <a href="{{ route('pengajuan-surat.create', ['surat' => 'keterangan']) }}">
+                    <div
+                        class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5">
+                        <img class="w-[70px] text-center lg:w-[100px] mx-auto"
+                            src="{{ asset('/img/keterangan_pengantar.png') }}" alt="">
+                        <p class="py-1 text-md text-dark">Surat Keterangan Usaha</p>
+                    </div>
+                </a>
+            </div>
+            <div class="w-full mb-3">
+                <a href="{{ route('pengajuan-surat.create', ['surat' => 'kelahiran']) }}">
+                    <div
+                        class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5">
+                        <img class="w-[70px] text-center lg:w-[90px] mx-auto" src="{{ asset('/img/kelahiran.png') }}"
+                            alt="">
+                        <p class="py-1 text-md text-dark">Surat Keterangan Domisili</p>
                     </div>
                 </a>
             </div>
@@ -135,12 +157,10 @@
                         class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5">
                         <img class="w-[70px] text-center lg:w-[160px] mx-auto" src="{{ asset('/img/kematian.png') }}"
                             alt="">
-                        <p class="py-1 text-md text-dark">Kematian</p>
+                        <p class="py-1 text-md text-dark">Surat Keterangan Tidak Mampu</p>
                     </div>
                 </a>
             </div>
-
-
         </div>
     </div>
     <div class="flex justify-between">

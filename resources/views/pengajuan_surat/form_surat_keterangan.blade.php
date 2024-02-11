@@ -19,7 +19,7 @@
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Nama</label>
                         <input type="text" name="nama"
                             class="mt-1 px-3 py-2 @error('nama') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Nama" value="{{ old('nama',auth()->user()->nama) }}" />
+                            placeholder="Nama" value="{{ old('nama', auth()->user()->nama) }}" />
                         @error('nama')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
@@ -34,6 +34,15 @@
                         @enderror
                     </div>
                     <div class="flex flex-col mb-6">
+                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Kewarganegaraan & Agama</label>
+                        <input type="text" name="negara_agama"
+                            class="mt-1 px-3 py-2 @error('negara_agama') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
+                            placeholder="Kewarganegaraan & Agama" value="{{ old('negara_agama', 'WNI & Islam') }}" />
+                        @error('negara_agama')
+                            <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="flex flex-col mb-6">
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">NIK</label>
                         <input type="text" name="nik"
                             class="mt-1 px-3 py-2 @error('nik') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
@@ -43,23 +52,15 @@
                         @enderror
                     </div>
                     <div class="flex flex-col mb-6">
-                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Nomor KK</label>
-                        <input type="text" name="no_kk"
-                            class="mt-1 px-3 py-2 @error('no_kk') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Nomor KK" value="{{ old('no_kk') }}" />
-                        @error('no_kk')
+                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Status</label>
+                        <input type="text" name="status"
+                            class="mt-1 px-3 py-2 @error('status') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
+                            placeholder="Kawin / Belum Kawin" value="{{ old('status') }}" />
+                        @error('status')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="flex flex-col mb-6">
-                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Kewarganegaraan & Agama</label>
-                        <input type="text" name="negara_agama"
-                            class="mt-1 px-3 py-2 @error('negara_agama') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Kewarganegaraan & Agama" value="{{ old('negara_agama', 'WNI & Islam') }}" />
-                        @error('negara_agama')
-                            <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
-                        @enderror
-                    </div>
+
                 </div>
                 <div
                     class="w-full

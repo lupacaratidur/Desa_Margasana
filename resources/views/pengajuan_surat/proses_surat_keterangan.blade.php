@@ -89,11 +89,11 @@
                         @enderror
                     </div>
                     <div class="flex flex-col mb-6">
-                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Nomor KK</label>
-                        <input type="text" name="no_kk"
-                            class="mt-1 px-3 py-2 @error('no_kk') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Nomor KK" value="{{ old('no_kk', $surat->no_kk) }}" />
-                        @error('no_kk')
+                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Status</label>
+                        <input type="text" name="status"
+                            class="mt-1 px-3 py-2 @error('status') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
+                            placeholder="Kawin / Belum Kawin" value="{{ old('status', $surat->status) }}" />
+                        @error('status')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
                     </div>
@@ -106,56 +106,56 @@
                         @error('negara_agama')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
+
                     </div>
-                </div>
-                <div
-                    class="w-full
-                [&>div>input]:border [&>div>input]:p-2.5 [&>div>input]:shadow-sm [&>div>input]:placeholder-secondary [&>div>input]:text-secondary [&>div>input]:w-full [&>div>input]:block [&>div>input]:rounded-lg [&>div>input]:sm:text-sm">
-                    <div class="flex flex-col mb-6">
-                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Pekerjaan</label>
-                        <input type="text" name="pekerjaan"
-                            class="mt-1 px-3 py-2 @error('pekerjaan') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Pekerjaan" value="{{ old('pekerjaan', $surat->pekerjaan) }}" />
-                        @error('pekerjaan')
-                            <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
-                        @enderror
+                    <div
+                        class="w-full[&>div>input]:border [&>div>input]:p-2.5 [&>div>input]:shadow-sm [&>div>input]:placeholder-secondary [&>div>input]:text-secondary [&>div>input]:w-full [&>div>input]:block [&>div>input]:rounded-lg [&>div>input]:sm:text-sm">
+                        <div class="flex flex-col mb-6">
+                            <label class="after:content-['*'] after:ml-0.5 after:text-danger">Pekerjaan</label>
+                            <input type="text" name="pekerjaan"
+                                class="mt-1 px-3 py-2 @error('pekerjaan') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
+                                placeholder="Pekerjaan" value="{{ old('pekerjaan', $surat->pekerjaan) }}" />
+                            @error('pekerjaan')
+                                <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="flex flex-col mb-6">
+                            <label class="after:content-['*'] after:ml-0.5 after:text-danger">Alamat</label>
+                            <input type="text" name="alamat"
+                                class="mt-1 px-3 py-2 @error('alamat') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
+                                placeholder="Alamat" value="{{ old('alamat', $surat->alamat) }}" />
+                            @error('alamat')
+                                <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="flex flex-col mb-6">
+                            <label class="after:content-['*'] after:ml-0.5 after:text-danger">Keperluan Surat</label>
+                            <input type="text" name="keperluan"
+                                class="mt-1 px-3 py-2 @error('keperluan') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
+                                placeholder="Keperluan Surat" value="{{ old('keperluan', $surat->keperluan) }}" />
+                            @error('keperluan')
+                                <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="flex flex-col mb-6">
+                            <label class="after:ml-0.5 after:text-danger">Keterangan lain-lain</label>
+                            <input type="text" name="keterangan_surat"
+                                class="mt-1 px-3 py-2 @error('keterangan_surat') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
+                                placeholder="Keterangan lain-lain"
+                                value="{{ old('keterangan_surat', $surat->keterangan_surat) }}" />
+                            @error('keterangan_surat')
+                                <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
+                            @enderror
+                        </div>
                     </div>
-                    <div class="flex flex-col mb-6">
-                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Alamat</label>
-                        <input type="text" name="alamat"
-                            class="mt-1 px-3 py-2 @error('alamat') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Alamat" value="{{ old('alamat', $surat->alamat) }}" />
-                        @error('alamat')
-                            <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
-                        @enderror
+                    <div class="w-full ">
                     </div>
-                    <div class="flex flex-col mb-6">
-                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Keperluan Surat</label>
-                        <input type="text" name="keperluan"
-                            class="mt-1 px-3 py-2 @error('keperluan') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Keperluan Surat" value="{{ old('keperluan', $surat->keperluan) }}" />
-                        @error('keperluan')
-                            <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
-                        @enderror
-                    </div>
-                    <div class="flex flex-col mb-6">
-                        <label class="after:ml-0.5 after:text-danger">Keterangan lain-lain</label>
-                        <input type="text" name="keterangan_surat"
-                            class="mt-1 px-3 py-2 @error('keterangan_surat') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Keterangan lain-lain"
-                            value="{{ old('keterangan_surat', $surat->keterangan_surat) }}" />
-                        @error('keterangan_surat')
-                            <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
-                        @enderror
-                    </div>
-                </div>
-            </div>
 
 
-            <div class="flex justify-end">
-                <button type="submit"
-                    class="text-white bg-danger focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">Submit</button>
-            </div>
+                    <div class="bottom flex justify-end ">
+                        <button type="submit"
+                            class="text-white bg-danger focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center h-2">Submit</button>
+                    </div>
         </form>
     </div>
 @endsection

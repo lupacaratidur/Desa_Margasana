@@ -10,7 +10,7 @@
 
     <style>
         .fs-1 {
-            font-size: 16px;
+            font-size: 10px;
         }
 
         .fs-2 {
@@ -48,23 +48,18 @@
 
 <body style="margin: 0px 10px;">
 
-    <!-- Kop Surat -->
-    <div align="center" style="border-bottom: 2px solid #000000; padding-bottom: 20px; margin-top: -60px !important">
-        <img src="https://user-images.githubusercontent.com/80609220/232207469-306c87a9-e1d1-489b-8560-33789fbe1abf.png"
-            width="90%" alt="">
-    </div>
 
     <!-- No. Kode Desa -->
 
-    {{-- <div style="margin-top: 26px; margin-bottom: 25px;">
+    <div style="margin-top: -30px; margin-bottom: 25px;">
 
         <table>
             <tr>
                 <td class="fs-1">
-                    Pemerintahan Kabupaten
+                    Pemerintah Desa/Kelurahan
                 </td>
                 <td class="fs-1">
-                    : PATI
+                    : <a> MARGASANA</a>
                 </td>
             </tr>
             <tr>
@@ -72,162 +67,310 @@
                     Kecamatan
                 </td>
                 <td class="fs-1">
-                    : MARGOYOSO
+                    : <a> JATILAWANG</a>
                 </td>
             </tr>
             <tr>
                 <td class="fs-1">
-                    Desa/Kelurahan
+                    Kabupaten/Kota
                 </td>
                 <td class="fs-1">
-                    : Margasana
+                    : <a> BANYUMAS</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="fs-1">
+                    Kode Wilayah
+                </td>
+                <td>: <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px">3302032005</a>
                 </td>
             </tr>
         </table>
 
-    </div> --}}
+    </div>
 
     <!-- Title -->
-    <div align="center" style="margin-top: 20px;">
+    <div align="center" style="margin-top: -30px;">
         <div class="fw-bold fs-1 text-uppercase">
-            <span style="border: 1px solid black; padding: 5px"> Surat Keterangan Kelahiran</span>
+            <span> Surat Keterangan Kelahiran</span>
         </div>
-        <p class="fs-1">Nomor : {{ $surat->nomor_surat }}</p>
+        <p class="fs-1" style="margin-top: 0px;">Nomor : {{ $surat->nomor_surat }}</p>
     </div>
 
     <!-- Content -->
 
-    <div style="margin-top: 10px;">
-        <div class="fs-1" style="margin-bottom: 10px; text-align: center;">Yang bertanda tangan dibawah ini
-            menerangkan
-            dengan sebenarnya, bahwa :</div>
-        <table width="100%">
-            <tr>
-                <td width="37%" class="fs-1">Hari</td>
-                <td class="fs-1"> : {{ $surat->hari }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Tanggal</td>
-                <td class="fs-1"> : {{ $surat->tanggal }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Tempat Kelahiran</td>
-                <td class="fs-1"> : {{ $surat->tempat_lahir }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Telah lahir anak ke</td>
-                <td class="fs-1"> : {{ $surat->anak_ke }}, {{ $surat->kelamin }} bernama</td>
-            </tr>
+    <table width="100%">
+        <tr>
+            <td width="37%" class="fs-1">Nama Kepala Keluarga</td>
+            <td class="fs-1">: <a class="fs-1"
+                    style="border: 1px solid black; padding: 2px 350px 0px 2px">SISWAJI</a>
+            </td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">Nomor Kartu keluarga</td>
+            <td class="fs-1"> : <a class="fs-1"
+                    style="border: 1px solid black; padding: 2px 300px 0px 2px">3302032706120002</a></td>
+        </tr>
+    </table>
 
-        </table>
+    <table width="100%" style="border: 1px solid black; border-right: none;">
+        <tr>
+            <td width="37%" class="fs-1" style="font-weight: bold;">BAYI/ANAK</td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">1. Nama</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">2. Jenis Kelamin</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 15px 0px 2px;"> </a>
+                <a style="margin-right: 50px; margin-left: 40px">1. Laki-laki </a> <a>2. Perempuan</a>
+            </td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">3. Tempat Dilahirkan</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px : 2px 15px 0px 2px;"></a>
+                <a style="margin-right: 30px; margin-left: 20px">1. RS/RB </a> <a>2. Perempuan</a>
+            </td>
+        </tr <tr>
+        <td width="37%" class="fs-1">4. Tempat Kelahiran</td>
+        <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">5. hari dan Tanggal Lahir</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">6. Pukul</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">7. Jenis Kelahiran</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">8. kelahiran Ke</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">9. Penolong Kelahiran</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">10. Berat Bayi</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">11. Panjang Bayi</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
 
-        <div class="fs-1 uppercase" style="margin-top: 10px; margin-bottom: 20px; text-align: center;"> <span
-                style="border-bottom: 2px solid #000000; text-transform: uppercase">{{ $surat->nama_anak }}</span></div>
-        <table width="100%">
-            <tr>
-                <td width="37%" colspan="2" class="fs-1">Dari Seorang Ibu :</td>
+    </table>
 
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Nama Lengkap</td>
-                <td class="fs-1"> : {{ $surat->nama_ibu }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">NIK</td>
-                <td class="fs-1"> : {{ $surat->nik_ibu }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Tempat, Tanggal Lahir</td>
-                <td class="fs-1"> : {{ $surat->ttl_ibu }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Pekerjaan</td>
-                <td class="fs-1"> : {{ $surat->pekerjaan_ibu }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Alamat</td>
-                <td class="fs-1"> : {{ $surat->alamat_ibu }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1"><br> Istri Dari :</td>
+    <table width="100%" style="border: 1px solid black; border-right: none;">
+        <tr>
+            <td width="37%" class="fs-1" style="font-weight: bold;">IBU</td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">1. NIK</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">2. Nama Lengkap</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">3. Tanggal Lahir / Umur</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">4. Pekerjaan</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">5. Alamat</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">6. Kewarganegaraan</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">7. Kebangsaan</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">8. Tgl Pencatatan Perkawinan</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+    </table>
 
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Nama Lengkap</td>
-                <td class="fs-1"> : {{ $surat->nama_ayah }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">NIK</td>
-                <td class="fs-1"> : {{ $surat->nik_ayah }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Tempat, Tanggal Lahir</td>
-                <td class="fs-1"> : {{ $surat->ttl_ayah }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Pekerjaan</td>
-                <td class="fs-1"> : {{ $surat->pekerjaan_ayah }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Alamat</td>
-                <td class="fs-1"> : {{ $surat->alamat_ayah }}</td>
-            </tr>
-            <tr>
-                <td colspan="2" width="37%" class="fs-1"><br> Surat keterangan ini dibuat berdasarkan keterangan
-                    pelapor</td>
+    <table width="100%" style="border: 1px solid black; border-right: none;">
+        <tr>
+            <td width="37%" class="fs-1" style="font-weight: bold;">AYAH</td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">1. NIK</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">2. Nama Lengkap</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">3. Tanggal Lahir / Umur</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">4. Pekerjaan</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">5. Alamat</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">6. Kewarganegaraan</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">7. Kebangsaan</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+    </table>
 
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Nama Lengkap</td>
-                <td class="fs-1"> : {{ $surat->nama_pelapor }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">NIK</td>
-                <td class="fs-1"> : {{ $surat->nik_pelapor }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Tempat, Tanggal Lahir</td>
-                <td class="fs-1"> : {{ $surat->ttl_pelapor }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Pekerjaan</td>
-                <td class="fs-1"> : {{ $surat->pekerjaan_pelapor }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Alamat</td>
-                <td class="fs-1"> : {{ $surat->alamat_pelapor }}</td>
-            </tr>
-            <tr>
-                <td width="37%" class="fs-1">Hubungan Pelapor dengan Bayi</td>
-                <td class="fs-1"> : {{ $surat->hub_pelapor_anak }}</td>
-            </tr>
+    <table width="100%" style="border: 1px solid black; border-right: none;">
+        <tr>
+            <td width="37%" class="fs-1" style="font-weight: bold;">PELAPOR</td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">1. NIK</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">2. Nama Lengkap</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">3. Umur</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">4. Jenis Kelamin</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">5. Pekerjaan</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">6. Alamat</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+    </table>
 
-        </table>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="fs-1" style="text-align: center;">Demikian surat keterangan dibuat untuk dapat
-            digunakan seperlunya.</div>
-    </div>
+    <table width="100%" style="border: 1px solid black; border-right: none;">
+        <tr>
+            <td width="37%" class="fs-1" style="font-weight: bold;">SAKSI I</td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">1. NIK</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">2. Nama Lengkap</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">3. Umur</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">4. Pekerjaan</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">5. Alamat</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+    </table>
+
+    <table width="100%" style="border: 1px solid black; border-right: none;">
+        <tr>
+            <td width="37%" class="fs-1" style="font-weight: bold;">SAKSI II</td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">1. NIK</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">2. Nama Lengkap</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">3. Umur</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">4. Pekerjaan</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+        <tr>
+            <td width="37%" class="fs-1">5. Alamat</td>
+            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">MUSA
+                    RIYADI</a></td>
+        </tr>
+
+    </table>
+
+
+
 
     <!-- Tanda Tangan -->
-    <div style="width: 100%; margin-top: 20px;">
-        <div align="center" style="width: 200px; position: relative; right: -30em" class="fs-1">
+    <div style="width: 100%;">
+        <div align="center" style="width: 250px; position: relative; right: -27em" class="fs-1">
             <p>Margasana, {{ \Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</p>
-            <p style="margin-top: -10px !important">Kepala Desa Sumerak</p>
-            <img style="margin-top: -2em !important"
-                src="https://user-images.githubusercontent.com/80609220/232229954-3db86399-39da-41ed-aeb4-f3bf7ee83198.png"
-                width="230" alt="">
-
-            <p style="margin-top: -30px !important">KUMARIYAH, S.Pd.MSi</p>
+            <p style="margin-top: -10px !important">Kepala Desa Margasana</p>
+            <br <br <br <br <br <p style="margin-top: -10px !important">DODIT ARI WIBOWO, S.Farm.,Apt</p>
         </div>
     </div>
 </body>
