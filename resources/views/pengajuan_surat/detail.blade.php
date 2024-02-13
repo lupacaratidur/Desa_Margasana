@@ -132,216 +132,568 @@
         <div class="bg-white py-6 px-9 mb-5 rounded-lg w-full">
             <div class="flex flex-col lg:flex-row gap-5 justify-center">
                 <div class="w-full ">
-                    <h1 class="text-2xl text-dark">Informasi Anak</h1>
+
+                    <h1 class="text-2xl text-dark">Informasi Keluarga</h1>
                     <table class="w-full mt-5 bg-divide-y overflow-hidden">
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
-                                Nama
+                                Nama Kepala Keluarga
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->nama_anak }} <br> <br></td>
+                            <td>{{ $surat->kepala_keluarga }} <br> <br></td>
                         </tr>
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
-                                Lahir
+                                No Kartu keluarga
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->hari }} ,{{ \Carbon\Carbon::parse($surat->tanggal)->isoFormat('D MMMM Y') }}
+                            <td>{{ $surat->no_kk }}
                                 <br> <br>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Tempat Kelahiran
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->tempat_lahir }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Kelamin
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->kelamin }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Anak Ke
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->anak_ke }} <br> <br></td>
-                        </tr>
                     </table>
-                </div>
-                <div class="w-full ">
-                    <h1 class="text-2xl text-dark">Informasi Ibu</h1>
-                    <table class="w-full mt-5 bg-divide-y overflow-hidden">
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Nama Ibu
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->nama_ibu }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                NIK Ibu
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->nik_ibu }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Tempat Tanggal Lahir Ibu
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->ttl_ibu }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Pekerjaan Ibu
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->pekerjaan_ibu }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Alamat Ibu
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->alamat_ibu }} <br> <br></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white py-6 px-9 mb-5 rounded-lg w-full">
-            <div class="flex flex-col lg:flex-row gap-5 justify-center">
-                <div class="w-full ">
-                    <h1 class="text-2xl text-dark">Informasi Ayah</h1>
-                    <table class="w-full mt-5 bg-divide-y overflow-hidden">
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Nama Ayah
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->nama_ayah }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                NIK Ayah
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->nik_ayah }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Tempat Tanggal Lahir Ayah
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->ttl_ayah }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Pekerjaan Ayah
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->pekerjaan_ayah }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Alamat Ayah
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->alamat_ayah }} <br> <br></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="w-full ">
-                    <h1 class="text-2xl text-dark">Informasi Pelapor</h1>
-                    <table class="w-full mt-5 bg-divide-y overflow-hidden">
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Nama Pelapor
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->nama_pelapor }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                NIK Pelapor
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->nik_pelapor }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Tempat Tanggal Lahir pelapor
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->ttl_pelapor }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Pekerjaan Pelapor
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->pekerjaan_pelapor }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Alamat Pelapor
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->alamat_pelapor }} <br> <br></td>
-                        </tr>
-                        <tr>
-                            <td class="w-[40%] lg:w-[15%] font-bold">
-                                Hubungan pelapor dengan anak
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{{ $surat->hub_pelapor_anak }} <br> <br></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white py-6 px-9 mb-5 rounded-lg w-full">
-            <div class="overflow-x">
-                <table class="w-full mt-10 bg-divide-y overflow-hidden">
 
-                    <tr>
-                        <td class="w-[40%] lg:w-[15%] font-bold">
-                            Pesan untuk petugas/admin
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>{{ $pengajuan_surat->pesan }} <br> <br></td>
-                    </tr>
-                </table>
+                    <div class="w-full ">
+                        <h1 class="text-2xl text-dark">Informasi Anak</h1>
+                        <table class="w-full mt-5 bg-divide-y overflow-hidden">
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Nama Bayi
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->nama_bayi }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Jenis Kelamin
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->kelamin_bayi }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Tempat Dilahirkan
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->tempat_lahir }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Tempat Kelahiran
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->lokasi_lahir }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Hari lahir
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->hari_lahir }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Tanggal lahir
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->tgl_lahir_bayi }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Bulan lahir
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->bln_lahir_bayi }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Tahun lahir
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->thn_lahir_bayi }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Lahir Pukul
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->lahir_pukul }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Anak ke
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->anak_ke }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Jenis Kelahiran
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->jenis_lahir }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Kelahiran Ke-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->lahiran_ke }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Penolong Kelahiran
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->penolong_lahir }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Berat Bayi
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->berat_bayi }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Panjang Bayi
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->panjang_bayi }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <div class="w-full ">
+                        <h1 class="text-2xl text-dark">Informasi Orang Tua</h1>
+                        <table class="w-full mt-5 bg-divide-y overflow-hidden">
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    NIK Ibu
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->nik_ibu }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Nama Ibu
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->nama_ibu }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Tanggal lahir ibu
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->tgl_lahir_ibu }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Bulan lahir ibu
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->bln_lahir_ibu }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Tahun lahir ibu
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->thn_lahir_ibu }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Umur Ibu
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->umur_ibu }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Pekerjaan Ibu
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->pekerjaan_ibu }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Alamat Ibu
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->alamat_ibu }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Kewarganegaraan Ibu
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->kewarganegaraan_ibu }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Kebangsaan Ibu
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->kebangsaan_ibu }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Tanggal Pencatatan Perkawinan
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->tgl_nikah }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Bulan Pencatatan Perkawinan
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->bln_nikah }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Tahun Pencatatan Perkawinan
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->thn_nikah }} <br> <br></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
-        </div>
+
+
+            <div class="bg-white py-6 px-9 mb-5 rounded-lg w-full">
+                <div class="flex flex-col lg:flex-row gap-5 justify-center">
+                    <div class="w-full ">
+                        <h1 class="text-2xl text-dark">Informasi Ayah</h1>
+                        <table class="w-full mt-5 bg-divide-y overflow-hidden">
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    NIK Ayah
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->nik_ayah }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Nama Ayah
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->nama_ayah }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Tanggal lahir ayah
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->tgl_lahir_ayah }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Bulan lahir ayah
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->bln_lahir_ayah }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Tahun lahir ayah
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->thn_lahir_ayah }}
+                                    <br> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Umur Ayah
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->umur_ayah }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Alamat Ayah
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->alamat_ayah }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Kewarganegaraan Ayah
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->kewarganegaraan_ayah }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Kebangsaan Ayah
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->kebangsaan_ayah }} <br> <br></td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <div class="w-full ">
+                        <h1 class="text-2xl text-dark">Informasi Pelapor</h1>
+                        <table class="w-full mt-5 bg-divide-y overflow-hidden">
+
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    NIK Pelapor
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->nik_pelapor }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Nama Pelapor
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->nama_pelapor }} <br> <br></td>
+                            </tr>
+
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Umur pelapor
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->umur_pelapor }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Jenis Kelamin Pelapor
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->kelamin_pelapor }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Pekerjaan Pelapor
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->pekerjaan_pelapor }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Alamat Pelapor
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->alamat_pelapor }} <br> <br></td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+
+                    <div class="w-full ">
+                        <h1 class="text-2xl text-dark">Informasi Saksi 1</h1>
+                        <table class="w-full mt-5 bg-divide-y overflow-hidden">
+
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    NIK Saksi 1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->nik_saksi1 }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Nama Saksi 1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->nama_saksi1 }} <br> <br></td>
+                            </tr>
+
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Umur Saksi 1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->umur_saksi1 }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Kelamin Saksi 1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->kelamin_saksi1 }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Pekerjaan Saksi 1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->pekerjaan_saksi1 }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Alamat Saksi 1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->alamat_saksi1 }} <br> <br></td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <div class="w-full ">
+                        <h1 class="text-2xl text-dark">Informasi Saksi 2</h1>
+                        <table class="w-full mt-5 bg-divide-y overflow-hidden">
+
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    NIK Saksi 2
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->nik_saksi2 }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Nama Saksi 2
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->nama_saksi2 }} <br> <br></td>
+                            </tr>
+
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Umur Saksi 2
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->umur_saksi2 }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Kelamin Saksi 2
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->kelamin_saksi2 }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Pekerjaan Saksi 2
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->pekerjaan_saksi2 }} <br> <br></td>
+                            </tr>
+                            <tr>
+                                <td class="w-[40%] lg:w-[15%] font-bold">
+                                    Alamat Saksi 2
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $surat->alamat_saksi2 }} <br> <br></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
     @endif
 
     @if ($pengajuan_surat->jenis_surat == 'Surat Kematian')

@@ -65,28 +65,74 @@ class PengajuanSuratController extends Controller
             $data['jenis_surat'] = 'Surat Keterangan';
         } elseif ($request->jenis_surat == 'kelahiran') {
             $request->validate([
-                'hari' => 'required',
-                'tanggal' => 'required',
+                'kepala_keluarga' => 'required',
+                'no_kk' => 'required',
+                //DATA ANAK
+                'nama_bayi' => 'required',
+                'kelamin_bayi' => 'required',
                 'tempat_lahir' => 'required',
+                'lokasi_lahir' => 'required',
+                'hari_lahir' => 'required',
+                'tgl_lahir_bayi' => 'required',
+                'bln_lahir_bayi' => 'required',
+                'thn_lahir_bayi' => 'required',
+                'lahir_pukul' => 'required',
                 'anak_ke' => 'required',
-                'kelamin' => 'required',
-                'nama_anak' => 'required',
-                'nama_ibu' => 'required',
+                'jenis_lahir' => 'required',
+                'lahiran_ke' => 'required',
+                'penolong_lahir' => 'required',
+                'berat_bayi' => 'required',
+                'panjang_bayi' => 'required',
+
+                // //DATA IBU
                 'nik_ibu' => 'required',
-                'ttl_ibu' => 'required',
+                'nama_ibu' => 'required',
+                'tgl_lahir_ibu' => 'required',
+                'bln_lahir_ibu' => 'required',
+                'thn_lahir_ibu' => 'required',
+                'umur_ibu' => 'required',
                 'pekerjaan_ibu' => 'required',
                 'alamat_ibu' => 'required',
-                'nama_ayah' => 'required',
+                'kewarganegaraan_ibu' => 'required',
+                'kebangsaan_ibu' => 'required',
+                'tgl_nikah' => 'required',
+                'bln_nikah' => 'required',
+                'thn_nikah' => 'required',
+
+                // //DATA AYAH
                 'nik_ayah' => 'required',
-                'ttl_ayah' => 'required',
-                'pekerjaan_ayah' => 'required',
+                'nama_ayah' => 'required',
+                'tgl_lahir_ayah' => 'required',
+                'bln_lahir_ayah' => 'required',
+                'thn_lahir_ayah' => 'required',
+                'umur_ayah' => 'required',
                 'alamat_ayah' => 'required',
-                'nama_pelapor' => 'required',
+                'kewarganegaraan_ayah' => 'required',
+                'kebangsaan_ayah' => 'required',
+
+                // //DATA PELAPOR
                 'nik_pelapor' => 'required',
-                'ttl_pelapor' => 'required',
+                'nama_pelapor' => 'required',
+                'umur_pelapor' => 'required',
+                'kelamin_pelapor' => 'required',
                 'pekerjaan_pelapor' => 'required',
                 'alamat_pelapor' => 'required',
-                'hub_pelapor_anak' => 'required',
+
+                // //DATA SAKSI I
+                'nik_saksi1' => 'required',
+                'nama_saksi1' => 'required',
+                'umur_saksi1' => 'required',
+                'kelamin_saksi1' => 'required',
+                'pekerjaan_saksi1' => 'required',
+                'alamat_saksi1' => 'required',
+
+                // //DATA SAKSI II
+                'nik_saksi2' => 'required',
+                'nama_saksi2' => 'required',
+                'umur_saksi2' => 'required',
+                'kelamin_saksi2' => 'required',
+                'pekerjaan_saksi2' => 'required',
+                'alamat_saksi2' => 'required',
             ]);
 
             $data = $request->except('_token');
@@ -217,28 +263,77 @@ class PengajuanSuratController extends Controller
             $data = $request->except('_token');
         } elseif ($pengajuanSurat->jenis_surat === 'Surat Kelahiran') {
             $request->validate([
-                'hari' => 'required',
-                'tanggal' => 'required',
+                'kepala_keluarga' => 'required',
+                'no_kk' => 'required',
+                //DATA ANAK
+                'nama_bayi' => 'required',
+                'kelamin_bayi' => 'required',
                 'tempat_lahir' => 'required',
+                'lokasi_lahir' => 'required',
+                'hari_lahir' => 'required',
+                'tgl_lahir_bayi' => 'required',
+                'bln_lahir_bayi' => 'required',
+                'thn_lahir_bayi' => 'required',
+                'lahir_pukul' => 'required',
                 'anak_ke' => 'required',
-                'kelamin' => 'required',
-                'nama_anak' => 'required',
-                'nama_ibu' => 'required',
+                'jenis_lahir' => 'required',
+                'lahiran_ke' => 'required',
+                'penolong_lahir' => 'required',
+                'berat_bayi' => 'required',
+                'panjang_bayi' => 'required',
+
+
+                // //DATA IBU
                 'nik_ibu' => 'required',
-                'ttl_ibu' => 'required',
+                'nama_ibu' => 'required',
+                'tgl_lahir_ibu' => 'required',
+                'bln_lahir_ibu' => 'required',
+                'thn_lahir_ibu' => 'required',
+                'umur_ibu' => 'required',
                 'pekerjaan_ibu' => 'required',
                 'alamat_ibu' => 'required',
-                'nama_ayah' => 'required',
+                'kewarganegaraan_ibu' => 'required',
+                'kebangsaan_ibu' => 'required',
+                'tgl_nikah_ibu' => 'required',
+                'bln_nikah_ibu' => 'required',
+                'thn_nikah_ibu' => 'required',
+
+                // //DATA AYAH
                 'nik_ayah' => 'required',
-                'ttl_ayah' => 'required',
-                'pekerjaan_ayah' => 'required',
+                'nama_ayah' => 'required',
+                'tgl_lahir_ayah' => 'required',
+                'bln_lahir_ayah' => 'required',
+                'thn_lahir_ayah' => 'required',
+                'umur_ayah' => 'required',
                 'alamat_ayah' => 'required',
-                'nama_pelapor' => 'required',
+                'kewarganegaraan_ayah' => 'required',
+                'kebangsaan_ayah' => 'required',
+
+                // //DATA PELAPOR
                 'nik_pelapor' => 'required',
-                'ttl_pelapor' => 'required',
+                'nama_pelapor' => 'required',
+                'umur_pelapor' => 'required',
+                'kelamin_pelapor' => 'required',
                 'pekerjaan_pelapor' => 'required',
                 'alamat_pelapor' => 'required',
-                'hub_pelapor_anak' => 'required',
+
+                // //DATA SAKSI I
+                'nik_saksi1' => 'required',
+                'nama_saksi1' => 'required',
+                'umur_saksi1' => 'required',
+                'kelamin_saksi1' => 'required',
+                'pekerjaan_saksi1' => 'required',
+                'alamat_saksi1' => 'required',
+
+                //DATA SAKSI II
+                'nik_saksi2' => 'nullable',
+                'nama_saksi2' => 'nullable',
+                'umur_saksi2' => 'nullable',
+                'kelamin_saksi2' => 'nullable',
+                'pekerjaan_saksi2' => 'nullable',
+                'alamat_saksi2' => 'nullable',
+
+                //DATA DARI ADMIN
                 'nomor_surat' => 'required',
             ]);
 
