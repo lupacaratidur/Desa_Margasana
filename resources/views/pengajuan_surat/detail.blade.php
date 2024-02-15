@@ -253,16 +253,6 @@
                             </tr>
                             <tr>
                                 <td class="w-[40%] lg:w-[15%] font-bold">
-                                    Anak ke
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>{{ $surat->anak_ke }}
-                                    <br> <br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="w-[40%] lg:w-[15%] font-bold">
                                     Jenis Kelahiran
                                 </td>
                             </tr>
@@ -608,14 +598,7 @@
                             <tr>
                                 <td>{{ $surat->umur_saksi1 }} <br> <br></td>
                             </tr>
-                            <tr>
-                                <td class="w-[40%] lg:w-[15%] font-bold">
-                                    Kelamin Saksi 1
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>{{ $surat->kelamin_saksi1 }} <br> <br></td>
-                            </tr>
+
                             <tr>
                                 <td class="w-[40%] lg:w-[15%] font-bold">
                                     Pekerjaan Saksi 1
@@ -665,14 +648,7 @@
                             <tr>
                                 <td>{{ $surat->umur_saksi2 }} <br> <br></td>
                             </tr>
-                            <tr>
-                                <td class="w-[40%] lg:w-[15%] font-bold">
-                                    Kelamin Saksi 2
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>{{ $surat->kelamin_saksi2 }} <br> <br></td>
-                            </tr>
+
                             <tr>
                                 <td class="w-[40%] lg:w-[15%] font-bold">
                                     Pekerjaan Saksi 2
@@ -691,7 +667,7 @@
                             </tr>
                         </table>
                     </div>
-
+                    --}}
                 </div>
             </div>
     @endif

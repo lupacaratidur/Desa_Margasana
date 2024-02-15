@@ -77,7 +77,7 @@ class PengajuanSuratController extends Controller
                 'bln_lahir_bayi' => 'required',
                 'thn_lahir_bayi' => 'required',
                 'lahir_pukul' => 'required',
-                'anak_ke' => 'required',
+                // 'anak_ke' => 'required',
                 'jenis_lahir' => 'required',
                 'lahiran_ke' => 'required',
                 'penolong_lahir' => 'required',
@@ -99,7 +99,7 @@ class PengajuanSuratController extends Controller
                 'bln_nikah' => 'required',
                 'thn_nikah' => 'required',
 
-                // //DATA AYAH
+                // // //DATA AYAH
                 'nik_ayah' => 'required',
                 'nama_ayah' => 'required',
                 'tgl_lahir_ayah' => 'required',
@@ -110,7 +110,7 @@ class PengajuanSuratController extends Controller
                 'kewarganegaraan_ayah' => 'required',
                 'kebangsaan_ayah' => 'required',
 
-                // //DATA PELAPOR
+                // // //DATA PELAPOR
                 'nik_pelapor' => 'required',
                 'nama_pelapor' => 'required',
                 'umur_pelapor' => 'required',
@@ -118,11 +118,11 @@ class PengajuanSuratController extends Controller
                 'pekerjaan_pelapor' => 'required',
                 'alamat_pelapor' => 'required',
 
-                // //DATA SAKSI I
+                // // //DATA SAKSI I
                 'nik_saksi1' => 'required',
                 'nama_saksi1' => 'required',
                 'umur_saksi1' => 'required',
-                'kelamin_saksi1' => 'required',
+                // 'kelamin_saksi1' => 'required',
                 'pekerjaan_saksi1' => 'required',
                 'alamat_saksi1' => 'required',
 
@@ -130,7 +130,7 @@ class PengajuanSuratController extends Controller
                 'nik_saksi2' => 'required',
                 'nama_saksi2' => 'required',
                 'umur_saksi2' => 'required',
-                'kelamin_saksi2' => 'required',
+                // 'kelamin_saksi2' => 'required',
                 'pekerjaan_saksi2' => 'required',
                 'alamat_saksi2' => 'required',
             ]);
@@ -275,13 +275,12 @@ class PengajuanSuratController extends Controller
                 'bln_lahir_bayi' => 'required',
                 'thn_lahir_bayi' => 'required',
                 'lahir_pukul' => 'required',
-                'anak_ke' => 'required',
+                // 'anak_ke' => 'required',
                 'jenis_lahir' => 'required',
                 'lahiran_ke' => 'required',
                 'penolong_lahir' => 'required',
                 'berat_bayi' => 'required',
                 'panjang_bayi' => 'required',
-
 
                 // //DATA IBU
                 'nik_ibu' => 'required',
@@ -294,11 +293,11 @@ class PengajuanSuratController extends Controller
                 'alamat_ibu' => 'required',
                 'kewarganegaraan_ibu' => 'required',
                 'kebangsaan_ibu' => 'required',
-                'tgl_nikah_ibu' => 'required',
-                'bln_nikah_ibu' => 'required',
-                'thn_nikah_ibu' => 'required',
+                'tgl_nikah' => 'required',
+                'bln_nikah' => 'required',
+                'thn_nikah' => 'required',
 
-                // //DATA AYAH
+                // // //DATA AYAH
                 'nik_ayah' => 'required',
                 'nama_ayah' => 'required',
                 'tgl_lahir_ayah' => 'required',
@@ -309,7 +308,7 @@ class PengajuanSuratController extends Controller
                 'kewarganegaraan_ayah' => 'required',
                 'kebangsaan_ayah' => 'required',
 
-                // //DATA PELAPOR
+                // // //DATA PELAPOR
                 'nik_pelapor' => 'required',
                 'nama_pelapor' => 'required',
                 'umur_pelapor' => 'required',
@@ -317,21 +316,21 @@ class PengajuanSuratController extends Controller
                 'pekerjaan_pelapor' => 'required',
                 'alamat_pelapor' => 'required',
 
-                // //DATA SAKSI I
+                // // //DATA SAKSI I
                 'nik_saksi1' => 'required',
                 'nama_saksi1' => 'required',
                 'umur_saksi1' => 'required',
-                'kelamin_saksi1' => 'required',
+                // 'kelamin_saksi1' => 'required',
                 'pekerjaan_saksi1' => 'required',
                 'alamat_saksi1' => 'required',
 
-                //DATA SAKSI II
-                'nik_saksi2' => 'nullable',
-                'nama_saksi2' => 'nullable',
-                'umur_saksi2' => 'nullable',
-                'kelamin_saksi2' => 'nullable',
-                'pekerjaan_saksi2' => 'nullable',
-                'alamat_saksi2' => 'nullable',
+                // //DATA SAKSI II
+                'nik_saksi2' => 'required',
+                'nama_saksi2' => 'required',
+                'umur_saksi2' => 'required',
+                // 'kelamin_saksi2' => 'required',
+                'pekerjaan_saksi2' => 'required',
+                'alamat_saksi2' => 'required',
 
                 //DATA DARI ADMIN
                 'nomor_surat' => 'required',

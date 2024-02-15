@@ -172,11 +172,6 @@
                     {{ $surat->lahir_pukul }}</a></td>
         </tr>
         <tr>
-            <td width="37%" class="fs-1">6. Anak Ke-</td>
-            <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">
-                    {{ $surat->anak_ke }}</a></td>
-        </tr>
-        <tr>
             <td width="37%" class="fs-1">7. Jenis Kelahiran</td>
             <td class="fs-1"> : <a class="fs-1"
                     style="border: 1px solid black; padding: 2px 15px 0px 2px;">{{ $surat->jenis_lahir }}</a>
@@ -192,6 +187,7 @@
                     style="border: 1px solid black; padding: 2px 10px 0px 2px;">{{ $surat->lahiran_ke }}</a><a
                     style="margin-right: 20px">1. 2. 3. 4. 5. .....</a></td>
         </tr>
+
         <tr>
             <td width="37%" class="fs-1">9. Penolong Kelahiran</td>
             <td class="fs-1"> : <a class="fs-1"
@@ -202,21 +198,26 @@
                     Lainnya</a>
             </td>
         </tr>
+
         <tr>
-            <td width="37%" class="fs-1">10. Berat Bayi</td>
+            <td width="37%" class="fs-1">11. Berat Bayi</td>
             <td class="fs-1"> : <a class="fs-1"
                     style="border: 1px solid black; padding: 2px 10px 0px 2px;">{{ $surat->berat_bayi }}</a>
                 <a style="margin-right: 20px"> Kg</a>
             </td>
         </tr>
         <tr>
-            <td width="37%" class="fs-1">11. Panjang Bayi</td>
+            <td width="37%" class="fs-1">12. Panjang Bayi</td>
             <td class="fs-1"> : <a class="fs-1"
                     style="border: 1px solid black; padding: 2px 10px 0px 2px;">{{ $surat->panjang_bayi }}</a></a>
                 <a style="margin-right: 20px"> Cm</a>
             </td>
             </td>
         </tr>
+
+
+
+
     </table>
     <!-- DATA IBU -->
     <table width="100%" style="border: 1px solid black; border-right: none;">
@@ -442,6 +443,7 @@
         </tr>
     </table>
 
+
     <!-- DATA SAKSI-->
     <table width="100%" style="border: 1px solid black; border-right: none;">
         <tr>
@@ -455,7 +457,7 @@
         <tr>
             <td width="37%" class="fs-1">2. Nama Lengkap</td>
             <td class="fs-1"> : <a class="fs-1"
-                    style="border: 1px solid black; padding: 2px 60px 0px 2px;">nama_saksi1</a></td>
+                    style="border: 1px solid black; padding: 2px 60px 0px 2px;">{{ $surat->nama_saksi1 }}</a></td>
         </tr>
         <tr>
             <td width="37%" class="fs-1">3. Umur</td>
@@ -465,6 +467,7 @@
                     style="border: 1px solid black; padding: 2px 10px 0px 10px;">{{ $surat->umur_saksi1 }}</a>
             </td>
         </tr>
+
         <tr>
             <td width="37%" class="fs-1">4. Pekerjaan</td>
             <td class="fs-1"> : <a class="fs-1"
@@ -521,10 +524,13 @@
         </tr>
 
         <tr>
-            <td width="37%" class="fs-1">4. Pekerjaan</td>
+            <td width="37%" class="fs-1">4. Pekerjaan Saksi 2</td>
             <td class="fs-1"> : <a class="fs-1"
-                    style="border: 1px solid black; padding: 2px 60px 0px 2px;">{{ $surat->umur_saksi2 }}</a></td>
+                    style="border: 1px solid black; padding: 2px 15px 0px 2px;">{{ $surat->pekerjaan_saksi2 }}</a>
+                <a style="margin-right: 50px; margin-left: 40px">1. Laki-laki </a> <a>2. Perempuan</a>
+            </td>
         </tr>
+
         <tr>
             <td width="37%" class="fs-1">5. Alamat</td>
             <td class="fs-1"> : <a class="fs-1"
@@ -550,6 +556,7 @@
         </tr>
 
     </table>
+
 
 
 
