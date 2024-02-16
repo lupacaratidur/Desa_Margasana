@@ -347,6 +347,7 @@
                                     <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                                 @enderror
                             </div>
+
                             <div class="flex flex-col mb-6">
                                 <label class="after:content-['*'] after:ml-0.5 after:text-danger">Alamat Ibu</label>
 
@@ -738,6 +739,8 @@
                         <button type="submit"
                             class="text-white bg-danger focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">Submit</button>
                     </div>
+                </div>
+            </div>
         </form>
     </div>
 @endsection

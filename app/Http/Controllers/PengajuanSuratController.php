@@ -139,21 +139,81 @@ class PengajuanSuratController extends Controller
             $data['jenis_surat'] = 'Surat Kelahiran';
         } elseif ($request->jenis_surat == 'kematian') {
             $request->validate([
-                'nama' => 'required',
-                'nik' => 'required',
-                'ttl' => 'required',
-                'kelamin' => 'required',
-                'agama' => 'required',
-                'alamat' => 'required',
-                'tgl_meninggal' => 'required',
-                'tempat_meninggal' => 'required',
-                'penyebab_meninggal' => 'required',
-                'nama_pelapor' => 'required',
-                'nik_pelapor' => 'required',
-                'ttl_pelapor' => 'required',
-                'pekerjaan_pelapor' => 'required',
-                'alamat_pelapor' => 'required',
-                'hub_pelapor_almarhum' => 'required',
+                'kepala_keluarga_jenazah' => 'required',
+                'no_kk_jenazah' => 'required',
+                //DATA JENAZAH
+                'nik_jenazah' => 'required',
+                'nama_jenazah' => 'required',
+                'kelamin_jenazah' => 'required',
+                'tgl_lahir_jenazah' => 'required',
+                'bln_lahir_jenazah' => 'required',
+                'thn_lahir_jenazah' => 'required',
+                'umur_jenazah' => 'required',
+                'tempat_lahir_jenazah' => 'required',
+                'agama_jenazah' => 'required',
+                'pekerjaan_jenazah' => 'required',
+                'alamat_jenazah' => 'required',
+                'anak_ke_jenazah' => 'required',
+                'tgl_mati_jenazah' => 'required',
+                'bln_mati_jenazah' => 'required',
+                'thn_mati_jenazah' => 'required',
+                'pukul_jenazah' => 'required',
+                'sebab_mati_jenazah' => 'required',
+                'tempat_mati_jenazah' => 'required',
+                'yang_menerangkan_jenazah' => 'required',
+
+                // // //DATA AYAH
+                'nik_ayah_jenazah' => 'required',
+                'nama_ayah_jenazah' => 'required',
+                'tgl_lahir_ayah_jenazah' => 'required',
+                'bln_lahir_ayah_jenazah' => 'required',
+                'thn_lahir_ayah_jenazah' => 'required',
+                'umur_ayah_jenazah' => 'required',
+                'pekerjaan_ayah_jenazah' => 'required',
+                'alamat_ayah_jenazah' => 'required',
+
+                // //DATA IBU
+                'nik_ibu_jenazah' => 'required',
+                'nama_ibu_jenazah' => 'required',
+                'tgl_lahir_ibu_jenazah' => 'required',
+                'bln_lahir_ibu_jenazah' => 'required',
+                'thn_lahir_ibu_jenazah' => 'required',
+                'umur_ibu_jenazah' => 'required',
+                'pekerjaan_ibu_jenazah' => 'required',
+                'alamat_ibu_jenazah' => 'required',
+
+                // // //DATA PELAPOR
+                'nik_pelapor_jenazah' => 'required',
+                'nama_pelapor_jenazah' => 'required',
+                'tgl_lahir_pelapor_jenazah' => 'required',
+                'bln_lahir_pelapor_jenazah' => 'required',
+                'thn_lahir_pelapor_jenazah' => 'required',
+                'umur_pelapor_jenazah' => 'required',
+                'kelamin_pelapor_jenazah' => 'required',
+                'pekerjaan_pelapor_jenazah' => 'required',
+                'alamat_pelapor_jenazah' => 'required',
+
+
+                // // //DATA SAKSI I
+                'nik_saksi1_jenazah' => 'required',
+                'nama_saksi1_jenazah' => 'required',
+                'tgl_lahir_saksi1_jenazah' => 'required',
+                'bln_lahir_saksi1_jenazah' => 'required',
+                'thn_lahir_saksi1_jenazah' => 'required',
+                'umur_saksi1_jenazah' => 'required',
+                'pekerjaan_saksi1_jenazah' => 'required',
+                'alamat_saksi1_jenazah' => 'required',
+
+                // //DATA SAKSI II
+                'nik_saksi2_jenazah' => 'required',
+                'nama_saksi2_jenazah' => 'required',
+                'tgl_lahir_saksi2_jenazah' => 'required',
+                'bln_lahir_saksi2_jenazah' => 'required',
+                'thn_lahir_saksi2_jenazah' => 'required',
+                'umur_saksi2_jenazah' => 'required',
+                'pekerjaan_saksi2_jenazah' => 'required',
+                'alamat_saksi2_jenazah' => 'required',
+
             ]);
 
             $data = $request->except('_token');
@@ -339,22 +399,83 @@ class PengajuanSuratController extends Controller
             $data = $request->except('_token');
         } elseif ($pengajuanSurat->jenis_surat === 'Surat Kematian') {
             $request->validate([
-                'nama' => 'required',
-                'nik' => 'required',
-                'ttl' => 'required',
-                'kelamin' => 'required',
-                'agama' => 'required',
-                'alamat' => 'required',
-                'tgl_meninggal' => 'required',
-                'tempat_meninggal' => 'required',
-                'penyebab_meninggal' => 'required',
-                'nama_pelapor' => 'required',
-                'nik_pelapor' => 'required',
-                'ttl_pelapor' => 'required',
-                'pekerjaan_pelapor' => 'required',
-                'alamat_pelapor' => 'required',
-                'hub_pelapor_almarhum' => 'required',
-                'nomor_surat' => 'required',
+                'kepala_keluarga_jenazah' => 'required',
+                'no_kk_jenazah' => 'required',
+                //DATA JENAZAH
+                'nik_jenazah' => 'required',
+                'nama_jenazah' => 'required',
+                'kelamin_jenazah' => 'required',
+                'tgl_lahir_jenazah' => 'required',
+                'bln_lahir_jenazah' => 'required',
+                'thn_lahir_jenazah' => 'required',
+                'umur_jenazah' => 'required',
+                'tempat_lahir_jenazah' => 'required',
+                'agama_jenazah' => 'required',
+                'pekerjaan_jenazah' => 'required',
+                'alamat_jenazah' => 'required',
+                'anak_ke_jenazah' => 'required',
+                'tgl_mati_jenazah' => 'required',
+                'bln_mati_jenazah' => 'required',
+                'thn_mati_jenazah' => 'required',
+                'pukul_jenazah' => 'required',
+                'sebab_mati_jenazah' => 'required',
+                'tempat_mati_jenazah' => 'required',
+                'yang_menerangkan_jenazah' => 'required',
+
+                // // //DATA AYAH
+                'nik_ayah_jenazah' => 'required',
+                'nama_ayah_jenazah' => 'required',
+                'tgl_lahir_ayah_jenazah' => 'required',
+                'bln_lahir_ayah_jenazah' => 'required',
+                'thn_lahir_ayah_jenazah' => 'required',
+                'umur_ayah_jenazah' => 'required',
+                'pekerjaan_ayah_jenazah' => 'required',
+                'alamat_ayah_jenazah' => 'required',
+
+                // //DATA IBU
+                'nik_ibu_jenazah' => 'required',
+                'nama_ibu_jenazah' => 'required',
+                'tgl_lahir_ibu_jenazah' => 'required',
+                'bln_lahir_ibu_jenazah' => 'required',
+                'thn_lahir_ibu_jenazah' => 'required',
+                'umur_ibu_jenazah' => 'required',
+                'pekerjaan_ibu_jenazah' => 'required',
+                'alamat_ibu_jenazah' => 'required',
+
+                // // //DATA PELAPOR
+                'nik_pelapor_jenazah' => 'required',
+                'nama_pelapor_jenazah' => 'required',
+                'tgl_lahir_pelapor_jenazah' => 'required',
+                'bln_lahir_pelapor_jenazah' => 'required',
+                'thn_lahir_pelapor_jenazah' => 'required',
+                'umur_pelapor_jenazah' => 'required',
+                'kelamin_pelapor_jenazah' => 'required',
+                'pekerjaan_pelapor_jenazah' => 'required',
+                'alamat_pelapor_jenazah' => 'required',
+
+
+                // // //DATA SAKSI I
+                'nik_saksi1_jenazah' => 'required',
+                'nama_saksi1_jenazah' => 'required',
+                'tgl_lahir_saksi1_jenazah' => 'required',
+                'bln_lahir_saksi1_jenazah' => 'required',
+                'thn_lahir_saksi1_jenazah' => 'required',
+                'umur_saksi1_jenazah' => 'required',
+                'pekerjaan_saksi1_jenazah' => 'required',
+                'alamat_saksi1_jenazah' => 'required',
+
+                // //DATA SAKSI II
+                'nik_saksi2_jenazah' => 'required',
+                'nama_saksi2_jenazah' => 'required',
+                'tgl_lahir_saksi2_jenazah' => 'required',
+                'bln_lahir_saksi2_jenazah' => 'required',
+                'thn_lahir_saksi2_jenazah' => 'required',
+                'umur_saksi2_jenazah' => 'required',
+                'pekerjaan_saksi2_jenazah' => 'required',
+                'alamat_saksi2_jenazah' => 'required',
+
+                //DATA DARI ADMIN
+                'nomor_surat_kematian' => 'required',
             ]);
 
             $data = $request->except('_token');
