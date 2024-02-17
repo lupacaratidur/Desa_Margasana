@@ -676,39 +676,92 @@
         <div class="bg-white py-6 px-9 mb-5 rounded-lg w-full">
             <div class="flex flex-col lg:flex-row gap-5 justify-center">
                 <div class="w-full ">
-                    <h1 class="text-2xl text-dark">Informasi Almarhum</h1>
+                    <h1 class="text-2xl text-dark">Informasi Keluarga</h1>
                     <table class="w-full mt-5 bg-divide-y overflow-hidden">
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
-                                Nama
+                                Nama Kepala Keluarga
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->nama }} <br> <br></td>
+                            <td>{{ $surat->kepala_keluarga_jenazah }} <br> <br></td>
                         </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                No Kartu keluarga
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->no_kk_jenazah }}
+                                <br> <br>
+                            </td>
+                        </tr>
+                    </table>
+                    <h1 class="text-2xl text-dark">Informasi Jenazah</h1>
+                    <table class="w-full mt-5 bg-divide-y overflow-hidden">
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
                                 NIK
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->nik }} <br> <br></td>
+                            <td>{{ $surat->nik_jenazah }} <br> <br></td>
                         </tr>
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
-                                Tempat Tanggal Lahir
+                                Nama Lengkap
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->ttl }} <br> <br></td>
+                            <td>{{ $surat->nama_jenazah }} <br> <br></td>
                         </tr>
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
-                                Kelamin
+                                Jenis Kelamin
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->kelamin }} <br> <br></td>
+                            <td>{{ $surat->kelamin_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Tanggal Lahir Jenazah
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->tgl_lahir_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Bulan Lahir Jenazah
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->bln_lahir_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Tahun Lahir Jenazah
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->thn_lahir_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Umur
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->umur_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Tempat Lahir
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->tempat_lahir_jenazah }} <br> <br></td>
                         </tr>
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
@@ -716,7 +769,15 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->agama }} <br> <br></td>
+                            <td>{{ $surat->agama_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Pekerjaan
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->pekerjaan_jenazah }} <br> <br></td>
                         </tr>
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
@@ -724,33 +785,212 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->alamat }} <br> <br></td>
+                            <td>{{ $surat->alamat_jenazah }} <br> <br></td>
                         </tr>
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
-                                Tanggal Meninggal
+                                Anak ke
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ \Carbon\Carbon::parse($surat->tgl_meninggal)->isoFormat('dddd, D MMMM Y') }} <br> <br>
-                            </td>
+                            <td>{{ $surat->anak_ke_jenazah }} <br> <br></td>
                         </tr>
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
-                                Tempat Meninggal
+                                Tanggal Kematian Jenazah
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->tempat_meninggal }} <br> <br></td>
+                            <td>{{ $surat->tgl_mati_jenazah }} <br> <br></td>
                         </tr>
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
-                                Penyebab Kematian
+                                Bulan Kematian Jenazah
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->penyebab_meninggal }} <br> <br></td>
+                            <td>{{ $surat->bln_mati_jenazah }} <br> <br></td>
                         </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Tahun Kematian Jenazah
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->thn_mati_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Pukul
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->pukul_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Sebab Kematian
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->sebab_mati_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Tempat Kematian
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->tempat_mati_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Yang Menerangkan
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->yang_menerangkan_jenazah }} <br> <br></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="w-full ">
+                    <h1 class="text-2xl text-dark">Informasi Ayah</h1>
+                    <table class="w-full mt-5 bg-divide-y overflow-hidden">
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                NIK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->nik_ayah_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Nama Lengkap
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->nama_ayah_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Tanggal Lahir Ayah
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->tgl_lahir_ayah_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Bulan Lahir Ayah
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->bln_lahir_ayah_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Tahun Lahir Ayah
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->thn_lahir_ayah_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Umur
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->umur_ayah_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Pekerjaan
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->pekerjaan_ayah_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Alamat
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->alamat_ayah_jenazah }} <br> <br></td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="w-full ">
+                    <h1 class="text-2xl text-dark">Informasi Ibu</h1>
+                    <table class="w-full mt-5 bg-divide-y overflow-hidden">
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                NIK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->nik_ibu_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Nama Lengkap
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->nama_ibu_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Tanggal Lahir Ibu
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->tgl_lahir_ibu_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Bulan Lahir Ibu
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->bln_lahir_ibu_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Tahun Lahir Ibu
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->thn_lahir_ibu_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Umur
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->umur_ibu_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Pekerjaan
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->pekerjaan_ibu_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Alamat
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->alamat_ibu_jenazah }} <br> <br></td>
+                        </tr>
+
                     </table>
                 </div>
                 <div class="w-full ">
@@ -758,71 +998,220 @@
                     <table class="w-full mt-5 bg-divide-y overflow-hidden">
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
-                                Nama Pelapor
+                                NIK
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->nama_pelapor }} <br> <br></td>
+                            <td>{{ $surat->nik_pelapor_jenazah }} <br> <br></td>
                         </tr>
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
-                                NIK Pelapor
+                                Nama Lengkap
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->nik_pelapor }} <br> <br></td>
+                            <td>{{ $surat->nama_pelapor_jenazah }} <br> <br></td>
                         </tr>
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
-                                Tempat Tanggal Lahir pelapor
+                                Tanggal Lahir Pelapor
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->ttl_pelapor }} <br> <br></td>
+                            <td>{{ $surat->tgl_lahir_pelapor_jenazah }} <br> <br></td>
                         </tr>
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
-                                Pekerjaan Pelapor
+                                Bulan Lahir Pelapor
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->pekerjaan_pelapor }} <br> <br></td>
+                            <td>{{ $surat->bln_lahir_pelapor_jenazah }} <br> <br></td>
                         </tr>
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
-                                Alamat Pelapor
+                                Tahun Lahir Pelapor
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->alamat_pelapor }} <br> <br></td>
+                            <td>{{ $surat->thn_lahir_pelapor_jenazah }} <br> <br></td>
                         </tr>
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
-                                Hubungan pelapor dengan Almarhum / Almarhumah
+                                Umur
                             </td>
                         </tr>
                         <tr>
-                            <td>{{ $surat->hub_pelapor_almarhum }} <br> <br></td>
+                            <td>{{ $surat->umur_pelapor_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Jenis Kelamin
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->kelamin_pelapor_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Pekerjaan
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->pekerjaan_pelapor_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Alamat
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->alamat_pelapor_jenazah }} <br> <br></td>
                         </tr>
 
                     </table>
                 </div>
-            </div>
-        </div>
 
-        <div class="bg-white py-6 px-9 mb-5 rounded-lg w-full">
-            <div class="overflow-x">
-                <table class="w-full bg-divide-y overflow-hidden">
+                <div class="w-full ">
+                    <h1 class="text-2xl text-dark">Informasi Saksi 1</h1>
+                    <table class="w-full mt-5 bg-divide-y overflow-hidden">
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                NIK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->nik_saksi1_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Nama Lengkap
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->nama_saksi1_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Tanggal Lahir Saksi 1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->tgl_lahir_saksi1_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Bulan Lahir Saksi1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->bln_lahir_saksi1_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Tahun Lahir Saksi 1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->thn_lahir_saksi1_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Umur
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->umur_saksi1_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Pekerjaan
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->pekerjaan_saksi1_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Alamat
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->alamat_saksi1_jenazah }} <br> <br></td>
+                        </tr>
 
-                    <tr>
-                        <td class="w-[40%] lg:w-[15%] font-bold">
-                            Pesan untuk petugas/admin
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>{{ $pengajuan_surat->pesan }} <br> <br></td>
-                    </tr>
-                </table>
+                    </table>
+                </div>
+                <div class="w-full ">
+                    <h1 class="text-2xl text-dark">Informasi Saksi 2</h1>
+                    <table class="w-full mt-5 bg-divide-y overflow-hidden">
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                NIK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->nik_saksi2_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Nama Lengkap
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->nama_saksi2_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Tanggal Lahir Saksi 2
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->tgl_lahir_saksi2_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Bulan Lahir Saksi 2
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->bln_lahir_saksi2_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Tahun Lahir Saksi 2
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->thn_lahir_saksi2_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Umur
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->umur_saksi2_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Pekerjaan
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->pekerjaan_saksi2_jenazah }} <br> <br></td>
+                        </tr>
+                        <tr>
+                            <td class="w-[40%] lg:w-[15%] font-bold">
+                                Alamat
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $surat->alamat_saksi2_jenazah }} <br> <br></td>
+                        </tr>
+
+                    </table>
+                </div>
             </div>
         </div>
     @endif
