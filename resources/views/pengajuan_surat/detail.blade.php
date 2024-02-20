@@ -1367,4 +1367,54 @@
             </div>
         </div>
     @endif
+
+    @if ($pengajuan_surat->jenis_surat == 'Surat Keterangan Tidak Mampu')
+        <div class="bg-white py-6 px-9 mb-5 rounded-lg w-full">
+            <div class="overflow-x">
+                <table class="w-full mt-10 bg-divide-y overflow-hidden">
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Nama
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ $surat->nama }} <br> <br></td>
+
+                    </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Tempat Lahir
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ $surat->tempat_lahir }} <br> <br></td>
+                    </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Tanggal lahir
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ $surat->ttl }} <br> <br></td>
+                    </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Alamat
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ $surat->alamat }} <br> <br></td>
+                    </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            NIK
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ $surat->nik }} <br> <br></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    @endif
 @endsection

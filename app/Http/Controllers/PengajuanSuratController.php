@@ -49,6 +49,10 @@ class PengajuanSuratController extends Controller
             return view('pengajuan_surat.form_surat_keterangan_domisili', [
                 'title' => 'Pengajuan Surat Keterangan Domisili',
             ]);
+        } elseif ($request->surat === 'keterangan_tidak_mampu') {
+            return view('pengajuan_surat.form_surat_keterangan_tidak_mampu', [
+                'title' => 'Pengajuan Surat Keterangan Tidak Mampu',
+            ]);
         } else {
             return redirect()->route('pengajuan-surat.index');
         }
@@ -251,6 +255,17 @@ class PengajuanSuratController extends Controller
 
             $data = $request->except('_token');
             $data['jenis_surat'] = 'Surat Keterangan Domisili';
+        } elseif ($request->jenis_surat == 'keterangan_tidak_mampu') {
+            $request->validate([
+                'nama' => 'required',
+                'tempat_lahir' => 'required',
+                'ttl' => 'required',
+                'alamat' => 'required',
+                'nik' => 'required',
+            ]);
+
+            $data = $request->except('_token');
+            $data['jenis_surat'] = 'Surat Keterangan Tidak Mampu';
         }
 
 
@@ -336,6 +351,11 @@ class PengajuanSuratController extends Controller
                 } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Domisili') {
                     return view('pengajuan_surat.proses_surat_keterangan_domisili', [
                         'title' => 'Proses Surat Keterangan Domisili',
+                        'pengajuan_surat' => $pengajuanSurat
+                    ]);
+                } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Tidak Mampu') {
+                    return view('pengajuan_surat.proses_surat_keterangan_tidak_mampu', [
+                        'title' => 'Proses Surat Keterangan Tidak Mampu',
                         'pengajuan_surat' => $pengajuanSurat
                     ]);
                 } else {
@@ -554,6 +574,20 @@ class PengajuanSuratController extends Controller
             ]);
 
             $data = $request->except('_token');
+        } elseif ($pengajuanSurat->jenis_surat == 'Surat Keterangan Tidak Mampu') {
+            $request->validate([
+                'nama' => 'required',
+                'tempat_lahir' => 'required',
+                'ttl' => 'required',
+                'alamat' => 'required',
+                'nik' => 'required',
+                'nomor_surat' => 'required',
+
+
+
+            ]);
+
+            $data = $request->except('_token');
         } else {
             return redirect()->route('pengajuan-surat.index');
         }
@@ -587,6 +621,8 @@ class PengajuanSuratController extends Controller
                     $html = 'pengajuan_surat.templates.surat_keterangan_usaha';
                 } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Domisili') {
                     $html = 'pengajuan_surat.templates.surat_keterangan_domisili';
+                } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Tidak Mampu') {
+                    $html = 'pengajuan_surat.templates.surat_keterangan_tidak_mampu';
                 } else {
                     return redirect()->route('pengajuan-surat.index');
                 }
@@ -604,6 +640,8 @@ class PengajuanSuratController extends Controller
                 $html = 'pengajuan_surat.templates.surat_keterangan_usaha';
             } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Domisili') {
                 $html = 'pengajuan_surat.templates.surat_keterangan_domisili';
+            } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Tidak Mampu') {
+                $html = 'pengajuan_surat.templates.surat_keterangan_tidak_mampu';
             } else {
                 return redirect()->route('pengajuan-surat.index');
             }
@@ -630,6 +668,8 @@ class PengajuanSuratController extends Controller
                     $html = 'pengajuan_surat.templates.surat_keterangan_usaha';
                 } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Domisili') {
                     $html = 'pengajuan_surat.templates.surat_keterangan_domisili';
+                } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Tidak Mampu') {
+                    $html = 'pengajuan_surat.templates.surat_keterangan_tidak_mampu';
                 } else {
                     return redirect()->route('pengajuan-surat.index');
                 }
@@ -647,6 +687,8 @@ class PengajuanSuratController extends Controller
                 $html = 'pengajuan_surat.templates.surat_keterangan_usaha';
             } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Domisili') {
                 $html = 'pengajuan_surat.templates.surat_keterangan_domisili';
+            } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Tidak Mampu') {
+                $html = 'pengajuan_surat.templates.surat_keterangan_tidak_mampu';
             } else {
                 return redirect()->route('pengajuan-surat.index');
             }
