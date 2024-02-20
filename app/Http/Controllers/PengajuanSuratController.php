@@ -41,6 +41,14 @@ class PengajuanSuratController extends Controller
             return view('pengajuan_surat.form_surat_kematian', [
                 'title' => 'Pengajuan Surat Keterangan Kematian',
             ]);
+        } elseif ($request->surat === 'keterangan_usaha') {
+            return view('pengajuan_surat.form_surat_keterangan_usaha', [
+                'title' => 'Pengajuan Surat Keterangan Usaha',
+            ]);
+        } elseif ($request->surat === 'keterangan_domisili') {
+            return view('pengajuan_surat.form_surat_keterangan_domisili', [
+                'title' => 'Pengajuan Surat Keterangan Domisili',
+            ]);
         } else {
             return redirect()->route('pengajuan-surat.index');
         }
@@ -141,88 +149,114 @@ class PengajuanSuratController extends Controller
             $request->validate([
                 'kepala_keluarga_jenazah' => 'required',
                 'no_kk_jenazah' => 'required',
-                //DATA JENAZAH
+                // //DATA JENAZAH
                 'nik_jenazah' => 'required',
-                'nama_jenazah' => 'required',
-                'kelamin_jenazah' => 'required',
-                'tgl_lahir_jenazah' => 'required',
-                'bln_lahir_jenazah' => 'required',
-                'thn_lahir_jenazah' => 'required',
-                'umur_jenazah' => 'required',
-                'tempat_lahir_jenazah' => 'required',
-                'agama_jenazah' => 'required',
-                'pekerjaan_jenazah' => 'required',
-                'alamat_jenazah' => 'required',
-                'anak_ke_jenazah' => 'required',
-                'tgl_mati_jenazah' => 'required',
-                'bln_mati_jenazah' => 'required',
-                'thn_mati_jenazah' => 'required',
-                'pukul_jenazah' => 'required',
-                'sebab_mati_jenazah' => 'required',
-                'tempat_mati_jenazah' => 'required',
-                'yang_menerangkan_jenazah' => 'required',
+                // 'nama_jenazah' => 'required',
+                // 'kelamin_jenazah' => 'required',
+                // 'tgl_lahir_jenazah' => 'required',
+                // 'bln_lahir_jenazah' => 'required',
+                // 'thn_lahir_jenazah' => 'required',
+                // 'umur_jenazah' => 'required',
+                // 'tempat_lahir_jenazah' => 'required',
+                // 'agama_jenazah' => 'required',
+                // 'pekerjaan_jenazah' => 'required',
+                // 'alamat_jenazah' => 'required',
+                // 'anak_ke_jenazah' => 'required',
+                // 'tgl_mati_jenazah' => 'required',
+                // 'bln_mati_jenazah' => 'required',
+                // 'thn_mati_jenazah' => 'required',
+                // 'pukul_jenazah' => 'required',
+                // 'sebab_mati_jenazah' => 'required',
+                // 'tempat_mati_jenazah' => 'required',
+                // 'yang_menerangkan_jenazah' => 'required',
 
-                // // //DATA AYAH
-                'nik_ayah_jenazah' => 'required',
-                'nama_ayah_jenazah' => 'required',
-                'tgl_lahir_ayah_jenazah' => 'required',
-                'bln_lahir_ayah_jenazah' => 'required',
-                'thn_lahir_ayah_jenazah' => 'required',
-                'umur_ayah_jenazah' => 'required',
-                'pekerjaan_ayah_jenazah' => 'required',
-                'alamat_ayah_jenazah' => 'required',
+                // // // //DATA AYAH
+                // 'nik_ayah_jenazah' => 'required',
+                // 'nama_ayah_jenazah' => 'required',
+                // 'tgl_lahir_ayah_jenazah' => 'required',
+                // 'bln_lahir_ayah_jenazah' => 'required',
+                // 'thn_lahir_ayah_jenazah' => 'required',
+                // 'umur_ayah_jenazah' => 'required',
+                // 'pekerjaan_ayah_jenazah' => 'required',
+                // 'alamat_ayah_jenazah' => 'required',
 
-                // //DATA IBU
-                'nik_ibu_jenazah' => 'required',
-                'nama_ibu_jenazah' => 'required',
-                'tgl_lahir_ibu_jenazah' => 'required',
-                'bln_lahir_ibu_jenazah' => 'required',
-                'thn_lahir_ibu_jenazah' => 'required',
-                'umur_ibu_jenazah' => 'required',
-                'pekerjaan_ibu_jenazah' => 'required',
-                'alamat_ibu_jenazah' => 'required',
+                // // //DATA IBU
+                // 'nik_ibu_jenazah' => 'required',
+                // 'nama_ibu_jenazah' => 'required',
+                // 'tgl_lahir_ibu_jenazah' => 'required',
+                // 'bln_lahir_ibu_jenazah' => 'required',
+                // 'thn_lahir_ibu_jenazah' => 'required',
+                // 'umur_ibu_jenazah' => 'required',
+                // 'pekerjaan_ibu_jenazah' => 'required',
+                // 'alamat_ibu_jenazah' => 'required',
 
-                // // //DATA PELAPOR
-                'nik_pelapor_jenazah' => 'required',
-                'nama_pelapor_jenazah' => 'required',
-                'tgl_lahir_pelapor_jenazah' => 'required',
-                'bln_lahir_pelapor_jenazah' => 'required',
-                'thn_lahir_pelapor_jenazah' => 'required',
-                'umur_pelapor_jenazah' => 'required',
-                'kelamin_pelapor_jenazah' => 'required',
-                'pekerjaan_pelapor_jenazah' => 'required',
-                'alamat_pelapor_jenazah' => 'required',
+                // // // //DATA PELAPOR
+                // 'nik_pelapor_jenazah' => 'required',
+                // 'nama_pelapor_jenazah' => 'required',
+                // 'tgl_lahir_pelapor_jenazah' => 'required',
+                // 'bln_lahir_pelapor_jenazah' => 'required',
+                // 'thn_lahir_pelapor_jenazah' => 'required',
+                // 'umur_pelapor_jenazah' => 'required',
+                // 'kelamin_pelapor_jenazah' => 'required',
+                // 'pekerjaan_pelapor_jenazah' => 'required',
+                // 'alamat_pelapor_jenazah' => 'required',
 
 
-                // // //DATA SAKSI I
-                'nik_saksi1_jenazah' => 'required',
-                'nama_saksi1_jenazah' => 'required',
-                'tgl_lahir_saksi1_jenazah' => 'required',
-                'bln_lahir_saksi1_jenazah' => 'required',
-                'thn_lahir_saksi1_jenazah' => 'required',
-                'umur_saksi1_jenazah' => 'required',
-                'pekerjaan_saksi1_jenazah' => 'required',
-                'alamat_saksi1_jenazah' => 'required',
+                // // // //DATA SAKSI I
+                // 'nik_saksi1_jenazah' => 'required',
+                // 'nama_saksi1_jenazah' => 'required',
+                // 'tgl_lahir_saksi1_jenazah' => 'required',
+                // 'bln_lahir_saksi1_jenazah' => 'required',
+                // 'thn_lahir_saksi1_jenazah' => 'required',
+                // 'umur_saksi1_jenazah' => 'required',
+                // 'pekerjaan_saksi1_jenazah' => 'required',
+                // 'alamat_saksi1_jenazah' => 'required',
 
-                // //DATA SAKSI II
-                'nik_saksi2_jenazah' => 'required',
-                'nama_saksi2_jenazah' => 'required',
-                'tgl_lahir_saksi2_jenazah' => 'required',
-                'bln_lahir_saksi2_jenazah' => 'required',
-                'thn_lahir_saksi2_jenazah' => 'required',
-                'umur_saksi2_jenazah' => 'required',
-                'pekerjaan_saksi2_jenazah' => 'required',
-                'alamat_saksi2_jenazah' => 'required',
-
+                // // //DATA SAKSI II
+                // 'nik_saksi2_jenazah' => 'required',
+                // 'nama_saksi2_jenazah' => 'required',
+                // 'tgl_lahir_saksi2_jenazah' => 'required',
+                // 'bln_lahir_saksi2_jenazah' => 'required',
+                // 'thn_lahir_saksi2_jenazah' => 'required',
+                // 'umur_saksi2_jenazah' => 'required',
+                // 'pekerjaan_saksi2_jenazah' => 'required',
+                // 'alamat_saksi2_jenazah' => 'required',
+            ]);
+            $data = $request->except('_token');
+            $data['jenis_surat'] = 'Surat Kematian';
+        } elseif ($request->jenis_surat == 'keterangan_usaha') {
+            $request->validate([
+                'nama' => 'required',
+                'tempat_lahir' => 'required',
+                'ttl' => 'required',
+                'negara_agama' => 'required',
+                'alamat' => 'required',
+                'nik' => 'required',
+                'lama_usaha' => 'required',
+                'nama_usaha' => 'required',
             ]);
 
             $data = $request->except('_token');
-            $data['jenis_surat'] = 'Surat Kematian';
+            $data['jenis_surat'] = 'Surat Keterangan Usaha';
+        } elseif ($request->jenis_surat == 'keterangan_domisili') {
+            $request->validate([
+                'nama' => 'required',
+                'tempat_lahir' => 'required',
+                'ttl' => 'required',
+                'kelamin' => 'required',
+                'pekerjaan' => 'required',
+                'status' => 'required',
+                'agama' => 'required',
+            ]);
+
+            $data = $request->except('_token');
+            $data['jenis_surat'] = 'Surat Keterangan Domisili';
         }
+
 
         PengajuanSurat::create([
             'masyarakat_id' => Auth::user()->id,
-            'pesan' => $data['pesan'] ?? '-',
+            // 'pesan' => $data['pesan'] ?? '-',
             'jenis_surat' => $data['jenis_surat'],
             'surat' => json_encode($data),
             'status' => 'Pending'
@@ -294,6 +328,16 @@ class PengajuanSuratController extends Controller
                         'title' => 'Proses Surat Keterangan Kematian',
                         'pengajuan_surat' => $pengajuanSurat
                     ]);
+                } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Usaha') {
+                    return view('pengajuan_surat.proses_surat_keterangan_usaha', [
+                        'title' => 'Proses Surat Keterangan Usaha',
+                        'pengajuan_surat' => $pengajuanSurat
+                    ]);
+                } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Domisili') {
+                    return view('pengajuan_surat.proses_surat_keterangan_domisili', [
+                        'title' => 'Proses Surat Keterangan Domisili',
+                        'pengajuan_surat' => $pengajuanSurat
+                    ]);
                 } else {
                     return redirect()->route('pengajuan-surat.index');
                 }
@@ -316,7 +360,6 @@ class PengajuanSuratController extends Controller
                 'pekerjaan' => 'required',
                 'alamat' => 'required',
                 'keperluan' => 'required',
-                'kode_desa' => 'required',
                 'nomor_surat' => 'required',
             ]);
 
@@ -393,7 +436,7 @@ class PengajuanSuratController extends Controller
                 'alamat_saksi2' => 'required',
 
                 //DATA DARI ADMIN
-                'nomor_surat' => 'required',
+                'nomor_surat_kematian' => 'required',
             ]);
 
             $data = $request->except('_token');
@@ -403,79 +446,111 @@ class PengajuanSuratController extends Controller
                 'no_kk_jenazah' => 'required',
                 //DATA JENAZAH
                 'nik_jenazah' => 'required',
-                'nama_jenazah' => 'required',
-                'kelamin_jenazah' => 'required',
-                'tgl_lahir_jenazah' => 'required',
-                'bln_lahir_jenazah' => 'required',
-                'thn_lahir_jenazah' => 'required',
-                'umur_jenazah' => 'required',
-                'tempat_lahir_jenazah' => 'required',
-                'agama_jenazah' => 'required',
-                'pekerjaan_jenazah' => 'required',
-                'alamat_jenazah' => 'required',
-                'anak_ke_jenazah' => 'required',
-                'tgl_mati_jenazah' => 'required',
-                'bln_mati_jenazah' => 'required',
-                'thn_mati_jenazah' => 'required',
-                'pukul_jenazah' => 'required',
-                'sebab_mati_jenazah' => 'required',
-                'tempat_mati_jenazah' => 'required',
-                'yang_menerangkan_jenazah' => 'required',
+                // 'nama_jenazah' => 'required',
+                // 'kelamin_jenazah' => 'required',
+                // 'tgl_lahir_jenazah' => 'required',
+                // 'bln_lahir_jenazah' => 'required',
+                // 'thn_lahir_jenazah' => 'required',
+                // 'umur_jenazah' => 'required',
+                // 'tempat_lahir_jenazah' => 'required',
+                // 'agama_jenazah' => 'required',
+                // 'pekerjaan_jenazah' => 'required',
+                // 'alamat_jenazah' => 'required',
+                // 'anak_ke_jenazah' => 'required',
+                // 'tgl_mati_jenazah' => 'required',
+                // 'bln_mati_jenazah' => 'required',
+                // 'thn_mati_jenazah' => 'required',
+                // 'pukul_jenazah' => 'required',
+                // 'sebab_mati_jenazah' => 'required',
+                // 'tempat_mati_jenazah' => 'required',
+                // 'yang_menerangkan_jenazah' => 'required',
 
-                // // //DATA AYAH
-                'nik_ayah_jenazah' => 'required',
-                'nama_ayah_jenazah' => 'required',
-                'tgl_lahir_ayah_jenazah' => 'required',
-                'bln_lahir_ayah_jenazah' => 'required',
-                'thn_lahir_ayah_jenazah' => 'required',
-                'umur_ayah_jenazah' => 'required',
-                'pekerjaan_ayah_jenazah' => 'required',
-                'alamat_ayah_jenazah' => 'required',
+                // // // //DATA AYAH
+                // 'nik_ayah_jenazah' => 'required',
+                // 'nama_ayah_jenazah' => 'required',
+                // 'tgl_lahir_ayah_jenazah' => 'required',
+                // 'bln_lahir_ayah_jenazah' => 'required',
+                // 'thn_lahir_ayah_jenazah' => 'required',
+                // 'umur_ayah_jenazah' => 'required',
+                // 'pekerjaan_ayah_jenazah' => 'required',
+                // 'alamat_ayah_jenazah' => 'required',
 
-                // //DATA IBU
-                'nik_ibu_jenazah' => 'required',
-                'nama_ibu_jenazah' => 'required',
-                'tgl_lahir_ibu_jenazah' => 'required',
-                'bln_lahir_ibu_jenazah' => 'required',
-                'thn_lahir_ibu_jenazah' => 'required',
-                'umur_ibu_jenazah' => 'required',
-                'pekerjaan_ibu_jenazah' => 'required',
-                'alamat_ibu_jenazah' => 'required',
+                // // //DATA IBU
+                // 'nik_ibu_jenazah' => 'required',
+                // 'nama_ibu_jenazah' => 'required',
+                // 'tgl_lahir_ibu_jenazah' => 'required',
+                // 'bln_lahir_ibu_jenazah' => 'required',
+                // 'thn_lahir_ibu_jenazah' => 'required',
+                // 'umur_ibu_jenazah' => 'required',
+                // 'pekerjaan_ibu_jenazah' => 'required',
+                // 'alamat_ibu_jenazah' => 'required',
 
-                // // //DATA PELAPOR
-                'nik_pelapor_jenazah' => 'required',
-                'nama_pelapor_jenazah' => 'required',
-                'tgl_lahir_pelapor_jenazah' => 'required',
-                'bln_lahir_pelapor_jenazah' => 'required',
-                'thn_lahir_pelapor_jenazah' => 'required',
-                'umur_pelapor_jenazah' => 'required',
-                'kelamin_pelapor_jenazah' => 'required',
-                'pekerjaan_pelapor_jenazah' => 'required',
-                'alamat_pelapor_jenazah' => 'required',
+                // // // //DATA PELAPOR
+                // 'nik_pelapor_jenazah' => 'required',
+                // 'nama_pelapor_jenazah' => 'required',
+                // 'tgl_lahir_pelapor_jenazah' => 'required',
+                // 'bln_lahir_pelapor_jenazah' => 'required',
+                // 'thn_lahir_pelapor_jenazah' => 'required',
+                // 'umur_pelapor_jenazah' => 'required',
+                // 'kelamin_pelapor_jenazah' => 'required',
+                // 'pekerjaan_pelapor_jenazah' => 'required',
+                // 'alamat_pelapor_jenazah' => 'required',
 
 
-                // // //DATA SAKSI I
-                'nik_saksi1_jenazah' => 'required',
-                'nama_saksi1_jenazah' => 'required',
-                'tgl_lahir_saksi1_jenazah' => 'required',
-                'bln_lahir_saksi1_jenazah' => 'required',
-                'thn_lahir_saksi1_jenazah' => 'required',
-                'umur_saksi1_jenazah' => 'required',
-                'pekerjaan_saksi1_jenazah' => 'required',
-                'alamat_saksi1_jenazah' => 'required',
+                // // // //DATA SAKSI I
+                // 'nik_saksi1_jenazah' => 'required',
+                // 'nama_saksi1_jenazah' => 'required',
+                // 'tgl_lahir_saksi1_jenazah' => 'required',
+                // 'bln_lahir_saksi1_jenazah' => 'required',
+                // 'thn_lahir_saksi1_jenazah' => 'required',
+                // 'umur_saksi1_jenazah' => 'required',
+                // 'pekerjaan_saksi1_jenazah' => 'required',
+                // 'alamat_saksi1_jenazah' => 'required',
 
-                // //DATA SAKSI II
-                'nik_saksi2_jenazah' => 'required',
-                'nama_saksi2_jenazah' => 'required',
-                'tgl_lahir_saksi2_jenazah' => 'required',
-                'bln_lahir_saksi2_jenazah' => 'required',
-                'thn_lahir_saksi2_jenazah' => 'required',
-                'umur_saksi2_jenazah' => 'required',
-                'pekerjaan_saksi2_jenazah' => 'required',
-                'alamat_saksi2_jenazah' => 'required',
+                // // //DATA SAKSI II
+                // 'nik_saksi2_jenazah' => 'required',
+                // 'nama_saksi2_jenazah' => 'required',
+                // 'tgl_lahir_saksi2_jenazah' => 'required',
+                // 'bln_lahir_saksi2_jenazah' => 'required',
+                // 'thn_lahir_saksi2_jenazah' => 'required',
+                // 'umur_saksi2_jenazah' => 'required',
+                // 'pekerjaan_saksi2_jenazah' => 'required',
+                // 'alamat_saksi2_jenazah' => 'required',
 
                 //DATA DARI ADMIN
                 'nomor_surat_kematian' => 'required',
+            ]);
+
+            $data = $request->except('_token');
+        } elseif ($pengajuanSurat->jenis_surat == 'Surat Keterangan Usaha') {
+            $request->validate([
+                'nama' => 'required',
+                'tempat_lahir' => 'required',
+                'ttl' => 'required',
+                'negara_agama' => 'required',
+                'alamat' => 'required',
+                'nik' => 'required',
+                'lama_usaha' => 'required',
+                'nama_usaha' => 'required',
+                'nomor_surat' => 'required',
+
+            ]);
+
+            $data = $request->except('_token');
+        } elseif ($pengajuanSurat->jenis_surat == 'Surat Keterangan Domisili') {
+            $request->validate([
+                'nama' => 'required',
+                'tempat_lahir' => 'required',
+                'ttl' => 'required',
+                'kelamin' => 'required',
+                'pekerjaan' => 'required',
+                'status' => 'required',
+                'agama' => 'required',
+                'nomor_surat' => 'required',
+                'rt' => 'required',
+                'rw' => 'required',
+
+
             ]);
 
             $data = $request->except('_token');
@@ -508,6 +583,10 @@ class PengajuanSuratController extends Controller
                     $html = 'pengajuan_surat.templates.surat_kelahiran';
                 } elseif ($pengajuanSurat->jenis_surat === 'Surat Kematian') {
                     $html = 'pengajuan_surat.templates.surat_kematian';
+                } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Usaha') {
+                    $html = 'pengajuan_surat.templates.surat_keterangan_usaha';
+                } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Domisili') {
+                    $html = 'pengajuan_surat.templates.surat_keterangan_domisili';
                 } else {
                     return redirect()->route('pengajuan-surat.index');
                 }
@@ -521,6 +600,10 @@ class PengajuanSuratController extends Controller
                 $html = 'pengajuan_surat.templates.surat_kelahiran';
             } elseif ($pengajuanSurat->jenis_surat === 'Surat Kematian') {
                 $html = 'pengajuan_surat.templates.surat_kematian';
+            } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Usaha') {
+                $html = 'pengajuan_surat.templates.surat_keterangan_usaha';
+            } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Domisili') {
+                $html = 'pengajuan_surat.templates.surat_keterangan_domisili';
             } else {
                 return redirect()->route('pengajuan-surat.index');
             }
@@ -543,6 +626,10 @@ class PengajuanSuratController extends Controller
                     $html = 'pengajuan_surat.templates.surat_kelahiran';
                 } elseif ($pengajuanSurat->jenis_surat === 'Surat Kematian') {
                     $html = 'pengajuan_surat.templates.surat_kematian';
+                } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Usaha') {
+                    $html = 'pengajuan_surat.templates.surat_keterangan_usaha';
+                } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Domisili') {
+                    $html = 'pengajuan_surat.templates.surat_keterangan_domisili';
                 } else {
                     return redirect()->route('pengajuan-surat.index');
                 }
@@ -556,6 +643,10 @@ class PengajuanSuratController extends Controller
                 $html = 'pengajuan_surat.templates.surat_kelahiran';
             } elseif ($pengajuanSurat->jenis_surat === 'Surat Kematian') {
                 $html = 'pengajuan_surat.templates.surat_kematian';
+            } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Usaha') {
+                $html = 'pengajuan_surat.templates.surat_keterangan_usaha';
+            } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Domisili') {
+                $html = 'pengajuan_surat.templates.surat_keterangan_domisili';
             } else {
                 return redirect()->route('pengajuan-surat.index');
             }

@@ -16,7 +16,7 @@
                 [&>div>input]:border [&>div>input]:p-2.5 [&>div>input]:shadow-sm [&>div>input]:placeholder-secondary [&>div>input]:text-secondary [&>div>input]:w-full [&>div>input]:block [&>div>input]:rounded-lg [&>div>input]:sm:text-sm
                 
                 ">
-
+                    <h2 class="text-[20px] mb-10">Informasi Keluarga</h2>
                     <div class="flex flex-col mb-6">
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Nama Kepala Keluarga</label>
                         <input type="text" name="kepala_keluarga_jenazah"
@@ -35,27 +35,30 @@
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
                     </div>
+                </div>
+            </div>
 
-                    <h2 class="text-[20px] mb-10">Informasi Jenazah</h2>
-                    <div class="flex flex-col lg:flex-row gap-5 justify-center">
-                        <input type="hidden" value="kelahiran" name="jenis_surat">
-                        <div
-                            class="w-full 
+            <h2 class="text-[20px] mb-10">Informasi Jenazah</h2>
+            <div class="flex flex-col lg:flex-row gap-5 justify-center">
+                <input type="hidden" value="kelahiran" name="jenis_surat">
+                <div
+                    class="w-full 
                 [&>div>input]:border [&>div>input]:p-2.5 [&>div>input]:shadow-sm [&>div>input]:placeholder-secondary [&>div>input]:text-secondary [&>div>input]:w-full [&>div>input]:block [&>div>input]:rounded-lg [&>div>input]:sm:text-sm
                 
                 ">
-                            <div class="flex flex-col mb-6">
-                                <label class="after:content-['*'] after:ml-0.5 after:text-danger">NIK Jenazah</label>
-                                <input type="number" name="nik_jenazah"
-                                    class="mt-1 px-3 py-2 @error('nik_jenazah') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                                    placeholder="Masukan NIK jenazah" value="{{ old('nik_jenazah') }}" />
-                                @error('nik_jenazah')
-                                    <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
-                                @enderror
-                            </div>
+                    <div class="flex flex-col mb-6">
+                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">NIK Jenazah</label>
+                        <input type="number" name="nik_jenazah"
+                            class="mt-1 px-3 py-2 @error('nik_jenazah') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
+                            placeholder="Masukan NIK jenazah" value="{{ old('nik_jenazah') }}" />
+                        @error('nik_jenazah')
+                            <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    {{--
                             <div class="flex flex-col mb-6">
                                 <label class="after:content-['*'] after:ml-0.5 after:text-danger">Nama Lengkap</label>
-                                <input type="number" name="nama_jenazah"
+                                <input type="text" name="nama_jenazah"
                                     class="mt-1 px-3 py-2 @error('nama_jenazah') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
                                     placeholder="Masukan nama lengkap jenazah" value="{{ old('nama_jenazah') }}" />
                                 @error('nama_jenazah')
@@ -125,7 +128,7 @@
                                     <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                                 @enderror
                             </div>
-
+                            
                             <div class="flex flex-col mb-6">
                                 <label class="after:content-['*'] after:ml-0.5 after:text-danger">Tempat Kelahiran</label>
                                 <input type="text" name="tempat_lahir_jenazah"
@@ -876,17 +879,19 @@
                                             </p>
                                         @enderror
                                     </div>
-                                </div>
-                            </div>
+                                     --}}
+                </div>
+
+            </div>
 
 
 
-                            <div class="flex justify-end">
-                                <button type="submit"
-                                    class="text-white bg-danger focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">Submit</button>
-                            </div>
-                        </div>
-                    </div>
-        </form>
+            <div class="flex justify-end">
+                <button type="submit"
+                    class="text-white bg-danger focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">Submit</button>
+            </div>
+    </div>
+    </div>
+    </form>
     </div>
 @endsection

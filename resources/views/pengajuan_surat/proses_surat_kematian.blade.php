@@ -69,6 +69,7 @@
                     </div>
                 </div>
             </div>
+
             <input type="hidden" value="kematian" name="jenis_surat">
             <div class="flex flex-col lg:flex-row gap-5 justify-center">
                 <div
@@ -88,6 +89,8 @@
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
                     </div>
+                    {{--
+
                     <div class="flex flex-col mb-6">
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Nama Lengkap</label>
                         <input type="text" name="nama_jenazah"
@@ -814,6 +817,7 @@
                         </div>
 
                     </div>
+                    --}}
                 </div>
 
 

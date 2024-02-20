@@ -95,7 +95,7 @@
         <div class="fw-bold fs-1 text-uppercase">
             <span> Surat Keterangan Kematian</span>
         </div>
-        <p class="fs-1" style="margin-top: 0px;">Nomor : {{ $surat->nomor_surat }}</p>
+        <p class="fs-1" style="margin-top: 0px;">Nomor : {{ $surat->nomor_surat_kematian }}</p>
     </div>
 
 
@@ -125,6 +125,8 @@
             <td class="fs-1"> : <a class="fs-1"
                     style="border: 1px solid black; padding: 2px 60px 0px 2px;">{{ $surat->nik_jenazah }}</a></td>
         </tr>
+        {{--
+
         <tr>
             <td width="37%" class="fs-1">2. Nama Lengkap</td>
             <td class="fs-1"> : <a class="fs-1"
@@ -158,7 +160,6 @@
                     style="border: 1px solid black; padding: 2px 10px 0px 10px;">{{ $surat->umur_jenazah }}</a>
             </td>
         </tr>
-
         <tr>
             <td width="37%" class="fs-1">5. Tempat Lahir</td>
             <td class="fs-1"> : <a class="fs-1" style="border: 1px solid black; padding: 2px 60px 0px 2px;">
@@ -591,7 +592,7 @@
             </td>
         <tr>
             <td></td>
-            <td width="37%" class="fs-1">a. Desa / Kelurahan</td>
+            <td width="37%" class="fs~1">a. Desa / Kelurahan</td>
             <td class="fs-1">: <a class="fs-1" style="border: 1px solid black; padding: 2px 10px 0px 2px;">DESA
                 </a></td>
             <td width="37%" class="fs-1">c. Kab/Kota</td>
@@ -610,16 +611,17 @@
         </tr>
 
     </table>
+    --}}
 
 
-    <!-- Tanda Tangan -->
-    <div style="width: 100%;">
-        <div align="center" style="width: 250px; position: relative; right: -27em" class="fs-1">
-            <p>Margasana, {{ \Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</p>
-            <p style="margin-top: -10px !important">Kepala Desa Margasana</p>
-            <br <br <br <br <br <p style="margin-top: -10px !important">DODIT ARI WIBOWO, S.Farm.,Apt</p>
+        <!-- Tanda Tangan -->
+        <div style="width: 100%;">
+            <div align="center" style="width: 250px; position: relative; right: -27em" class="fs-1">
+                <p>Margasana, {{ \Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</p>
+                <p style="margin-top: -10px !important">Kepala Desa Margasana</p>
+                <br <br <br <br <br <p style="margin-top: -10px !important">DODIT ARI WIBOWO, S.Farm.,Apt</p>
+            </div>
         </div>
-    </div>
 </body>
 
 </html>

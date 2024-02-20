@@ -62,15 +62,15 @@
                     <td colspan="2" class="td fw-bold fs-1 text-uppercase" style="width: 150px;">Keterangan</td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="td fw-bold fs-1 text-uppercase">Pengantar</td>
+                    <td colspan="2" class="td fw-bold fs-1 text-uppercase">Usaha</td>
                 </tr>
             </tbody>
         </table> --}}
 
         <div class="fw-bold fs-1 text-uppercase">
-            <span style="border: 1px solid black; padding: 10px"> Surat Keterangan/Pengantar</span>
+            <span style="border-bottom: 3px solid black; padding: -2px"> Surat Keterangan Usaha</span>
         </div>
-        <p class="fs-1">Nomor : {{ $surat->nomor_surat }}</p>
+        <p class="fs-1" style="padding: -5px">Nomor : {{ $surat->nomor_surat }}</p>
     </div>
 
     <!-- Content -->
@@ -85,57 +85,62 @@
             </tr>
             <tr>
                 <td width="35%" class="fs-1">Tempat & Tanggal Lahir</td>
-                <td class="fs-1"> : {{ $surat->ttl }}</td>
+                <td class="fs-1"> : {{ $surat->tempat_lahir }}, {{ $surat->ttl }}</td>
             </tr>
             <tr>
-                <td width="35%" class="fs-1">Kewarganegaraan & Agama</td>
+                <td width="35%" class="fs-1">Kewarganegaraan / Agama</td>
                 <td class="fs-1"> : {{ $surat->negara_agama }}</td>
-            </tr>
-            <tr>
-                <td width="35%" class="fs-1">Pekerjaan</td>
-                <td class="fs-1"> : {{ $surat->pekerjaan }}</td>
-            </tr>
-            <tr>
-                <td width="35%" class="fs-1">Status</td>
-                <td class="fs-1"> : {{ $surat->status }}</td>
             </tr>
             <tr>
                 <td width="35%" class="fs-1">Tempat Tinggal</td>
                 <td class="fs-1"> : {{ $surat->alamat }}</td>
             </tr>
             <tr>
-                <td width="35%" class="fs-1">NIK</td>
+                <td width="35%" class="fs-1">Tanda Bukti Diri</td>
                 <td class="fs-1"> : {{ $surat->nik }}</td>
             </tr>
             <tr>
-                <td width="35%" class="fs-1">Keperluan</td>
-                <td class="fs-1"> : {{ $surat->keperluan }}</td>
+                <td width="35%" class="fs-1">Lama Usaha</td>
+                <td class="fs-1"> : {{ $surat->lama_usaha }}</td>
             </tr>
-            <tr>
-                <td width="35%" class="fs-1">Berlaku Mulai</td>
-                <td class="fs-1"> : {{ \Carbon\Carbon::parse($surat->berlaku_mulai)->isoFormat('dddd, D MMMM Y') }}
-                </td>
-            </tr>
-            <tr>
-                <td width="35%" class="fs-1">Keterangan lain-lain</td>
-                <td class="fs-1"> : {{ $surat->keterangan_surat }}</td>
-            </tr>
+
         </table>
 
-        <div class="fs-1" style="margin-top: 20px;">Demikian untuk dapat dipergunakan sebagaimana mestinya.</div>
+        <div class="fs-1" style="margin-top: 20px;">Orang tersebut benar-benar mempunyai usaha sebagai
+            pedagang/petani/jasa/industri/lainnya, dengan jenis usaha berupa: </div>
+        <br <div class="fw-bold fs-1 text-uppercase" style="text-align:center">
+        <span style="border: 1px solid black; padding: 10px">{{ $surat->nama_usaha }}</span>
+    </div>
+    <br <div class="fs-1" style="margin-top: 20px;">Demikian Surat Keterangan Usaha ini dibuat dengan sebenarnya untuk
+    dapat dipergunakan sebagaimana mestinya.</div>
+
     </div>
 
     <br>
     <br>
     <br>
     <!-- Tanda Tangan -->
-    <div style="width: 100%;">
-        <div align="center" style="width: 250px; position: relative; right: -27em" class="fs-1">
-            <p>Margasana, {{ \Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</p>
-            <p style="margin-top: -10px !important">Kepala Desa Margasana</p>
-            <br <br <br <br <br <p style="margin-top: -10px !important">DODIT ARI WIBOWO, S.Farm.,Apt</p>
-        </div>
+    <div align="center" style="width: 250px; position: relative; right: -27.5em; float: left;" class="fs-1">
+        <p>Margasana, {{ \Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</p>
     </div>
+
+
+    <br <br <br <div width="100%">
+    <div align="center" class="fs-1" style="width: 250px; position: relative; float: left;">
+        <p style="margin-top: -10px !important">Tanda Tangan</p>
+        <p style="margin-top: -10px !important">Pemegang</p>
+        <br><br><br><br><br>
+        <p style="margin-top: -10px !important" class="text-uppercase">{{ $surat->nama }}</p>
+    </div>
+    <div align="center" class="fs-1" style="width: 250px; position: relative; right: -12em; float: left;">
+        <p style="margin-top: -10px !important">An.Kepala Desa Margasana</p>
+        <p style="margin-top: -10px !important">Sekretaris Desa</p>
+        <br><br><br><br><br>
+        <p style="margin-top: -10px !important">TOHIDIN</p>
+    </div>
+
+    </div>
+
 </body>
 
 </html>
