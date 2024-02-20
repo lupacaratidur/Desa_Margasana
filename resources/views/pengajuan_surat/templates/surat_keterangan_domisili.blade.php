@@ -77,7 +77,8 @@
 
     <div style="margin-top: 50px;">
         <div class="fs-1" style="margin-bottom: 10px;">Yang bertanda tangan dibawah ini atas nama Kepala Desa
-            margasana Kecamatan Jatilawang Kabupaten Banyumas menerangkan bahwa :</div>
+            margasana Kecamatan Jatilawang Kabupaten Banyumas, dengan ini menerangkan bahwa :</div>
+
         <table width="100%">
             <tr>
                 <td width="35%" class="fs-1">Nama</td>
@@ -88,52 +89,49 @@
                 <td class="fs-1"> : {{ $surat->tempat_lahir }}, {{ $surat->ttl }}</td>
             </tr>
             <tr>
-                <td width="35%" class="fs-1">Kewarganegaraan / Agama</td>
-                <td class="fs-1"> : {{ $surat->negara_agama }}</td>
-            </tr>
-            <tr>
-                <td width="35%" class="fs-1">Tempat Tinggal</td>
-                <td class="fs-1"> : {{ $surat->alamat }}</td>
-            </tr>
-            <tr>
-                <td width="35%" class="fs-1">Tanda Bukti Diri</td>
+                <td width="35%" class="fs-1">NIK</td>
                 <td class="fs-1"> : {{ $surat->nik }}</td>
             </tr>
             <tr>
-                <td width="35%" class="fs-1">Lama Usaha</td>
-                <td class="fs-1"> : {{ $surat->lama_usaha }}</td>
+                <td width="35%" class="fs-1">Jenis Kelamin</td>
+                <td class="fs-1"> : {{ $surat->kelamin }}</td>
+            </tr>
+            <tr>
+                <td width="35%" class="fs-1">Pekerjaan</td>
+                <td class="fs-1"> : {{ $surat->pekerjaan }}</td>
+            </tr>
+            <tr>
+                <td width="35%" class="fs-1">Status</td>
+                <td class="fs-1"> : {{ $surat->status }}</td>
+            </tr>
+            <tr>
+                <td width="35%" class="fs-1">Agama</td>
+                <td class="fs-1"> : {{ $surat->agama }}</td>
             </tr>
 
         </table>
 
-        <div class="fs-1" style="margin-top: 20px;">Orang tersebut benar-benar mempunyai usaha sebagai
-            pedagang/petani/jasa/industri/lainnya, dengan jenis usaha berupa: </div>
-        <br <div class="fw-bold fs-1 text-uppercase" style="text-align:center">
-        <span style="border: 1px solid black; padding: 10px">{{ $surat->nama_usaha }}</span>
-    </div>
-    <br <div class="fs-1" style="margin-top: 20px;">Demikian Surat Keterangan Usaha ini dibuat dengan sebenarnya untuk
-    dapat dipergunakan sebagaimana mestinya.</div>
+        <div class="fs-1" style="margin-top: 20px; "> Bahwa yang bersangkutan benar berdomisili di RT
+            {{ $surat->rt }} RW {{ $surat->rw }} Desa Margasana Kecamatan Jatilawang Kabupaten Banyumas</div>
+        <div class="fs-1" style="margin-top: 20px; ">Demikian surat keterangan ini dibuat, semoga
+            dapat digunakan
+            sebagaimana mestinya.</div>
 
     </div>
 
     <br>
     <br>
     <br>
+
     <!-- Tanda Tangan -->
     <div align="center" style="width: 250px; position: relative; right: -27.5em; float: left;" class="fs-1">
         <p>Margasana, {{ \Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</p>
     </div>
 
-
-    <br <br <br <div width="100%">
-    <div align="center" class="fs-1" style="width: 250px; position: relative; float: left;">
-        <p style="margin-top: -10px !important">Tanda Tangan</p>
-        <p style="margin-top: -10px !important">Pemegang</p>
-        <br><br><br><br><br>
-        <p style="margin-top: -10px !important" class="text-uppercase">{{ $surat->nama }}</p>
-    </div>
-    <div align="center" class="fs-1" style="width: 250px; position: relative; right: -12em; float: left;">
-        <p style="margin-top: -10px !important">An.Kepala Desa Margasana</p>
+    <div align="center" class="fs-1"
+        style="width: 250px; position: relative; right: -27.5em; >
+        <p style="margin-top: -10px !important">
+        An.Kepala Desa Margasana</p>
         <p style="margin-top: -10px !important">Sekretaris Desa</p>
         <br><br><br><br><br>
         <p style="margin-top: -10px !important">TOHIDIN</p>

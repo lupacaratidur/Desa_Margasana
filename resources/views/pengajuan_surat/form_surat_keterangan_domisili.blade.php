@@ -43,21 +43,21 @@
                         @enderror
                     </div>
                     <div class="flex flex-col mb-6">
-                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Kelamin</label>
+                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Jenis Kelamin</label>
                         <div class="relative">
                             <select
-                                class="appearance-none px-3 py-2 @error('kelamin_bayi') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                                id="grid-state" name="kelamin_bayi">
+                                class="appearance-none px-3 py-2 @error('kelamin') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
+                                id="grid-state" name="kelamin">
                                 <option value="">Pilih Jenis Kelamin</option>
-                                <option value="1">Laki-Laki</option>
-                                <option value="2">Perempuan</option>
+                                <option value="Laki-Laki">Laki-Laki</option>
+                                <option value="Perempuan">Perempuan</option>
                             </select>
                             <div
                                 class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                                 <i class='bx bx-chevron-down text-xl'></i>
                             </div>
                         </div>
-                        @error('kelamin_bayi')
+                        @error('kelamin')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
                     </div>
@@ -77,7 +77,7 @@
                         @enderror
                     </div>
                     <div class="flex flex-col mb-6">
-                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Nama Usaha</label>
+                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Pekerjaan</label>
                         <input type="text" name="pekerjaan"
                             class="mt-1 px-3 py-2 @error('pekerjaan') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
                             placeholder="Masukan nama usaha" value="{{ old('pekerjaan') }}" />
