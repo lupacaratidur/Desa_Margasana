@@ -68,9 +68,11 @@
                     </div>
                     <div class="flex flex-col mb-6">
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Alamat</label>
+                        <small class="text-secondary">Contoh penulisan : RT.005 RW.001 Desa Margasana Kecamatan
+                            Jatilawang</small>
                         <input type="text" name="alamat"
                             class="mt-1 px-3 py-2 @error('alamat') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Alamat" value="{{ old('alamat') }}" />
+                            placeholder="Tempat tinggal" value="{{ old('alamat') }}" />
                         @error('alamat')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror

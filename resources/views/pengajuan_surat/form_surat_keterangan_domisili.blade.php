@@ -8,7 +8,7 @@
     [&>div>div>select]:border [&>div>div>select]:p-2.5 [&>div>div>select]:shadow-sm [&>div>div>select]:placeholder-secondary [&>div>div>select]:text-secondary [&>div>div>select]:w-full [&>div>div>select]:block [&>div>div>select]:rounded-lg [&>div>div>select]:sm:text-sm
     [&>div>textarea]:text-secondary [&>div>textarea]:rounded-lg [&>div>textarea]:text-sm [&>div>textarea]:block [&>div>textarea]:w-full [&>div>textarea]:border [&>div>textarea]:shadow-sm ">
             @csrf
-            <h1 class="text-2xl text-center my-8">Form Pengisian Surat Keterangan Usaha</h1>
+            <h1 class="text-2xl text-center my-8">Form Pengisian Surat Keterangan Domisili</h1>
             <input type="hidden" value="keterangan_domisili" name="jenis_surat">
             <div class="flex flex-col lg:flex-row gap-5 justify-center">
                 <div
@@ -80,7 +80,7 @@
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Pekerjaan</label>
                         <input type="text" name="pekerjaan"
                             class="mt-1 px-3 py-2 @error('pekerjaan') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Masukan nama usaha" value="{{ old('pekerjaan') }}" />
+                            placeholder="Pekerjaan" value="{{ old('pekerjaan') }}" />
                         @error('pekerjaan')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror

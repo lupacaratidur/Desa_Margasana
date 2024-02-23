@@ -44,9 +44,10 @@
                     </div>
                     <div class="flex flex-col mb-6">
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Alamat</label>
+                        <small class="text-secondary">Contoh penulisan : Desa Margasana RT 001 RW 001</small>
                         <input type="text" name="alamat"
                             class="mt-1 px-3 py-2 @error('alamat') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Masukan nama usaha" value="{{ old('alamat') }}" />
+                            placeholder="Masukan alamat" value="{{ old('alamat') }}" />
                         @error('alamat')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
@@ -60,13 +61,14 @@
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
                     </div>
+                    <div class="flex justify-end mt-4">
+                        <button type="submit"
+                            class="text-white bg-danger focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">Submit</button>
+                    </div>
 
                 </div>
 
-                <div class="flex justify-end">
-                    <button type="submit"
-                        class="text-white bg-danger focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">Submit</button>
-                </div>
+
         </form>
     </div>
 @endsection

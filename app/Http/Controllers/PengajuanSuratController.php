@@ -64,6 +64,7 @@ class PengajuanSuratController extends Controller
         if ($request->jenis_surat == 'keterangan') {
             $request->validate([
                 'nama' => 'required',
+                'tempat_lahir' => 'required',
                 'ttl' => 'required',
                 'nik' => 'required',
                 'status' => 'required',
@@ -271,7 +272,6 @@ class PengajuanSuratController extends Controller
 
         PengajuanSurat::create([
             'masyarakat_id' => Auth::user()->id,
-            // 'pesan' => $data['pesan'] ?? '-',
             'jenis_surat' => $data['jenis_surat'],
             'surat' => json_encode($data),
             'status' => 'Pending'
@@ -373,6 +373,7 @@ class PengajuanSuratController extends Controller
         if ($pengajuanSurat->jenis_surat == 'Surat Keterangan') {
             $request->validate([
                 'nama' => 'required',
+                'tempat_lahir' => 'required',
                 'ttl' => 'required',
                 'nik' => 'required',
                 'status' => 'required',
@@ -456,7 +457,7 @@ class PengajuanSuratController extends Controller
                 'alamat_saksi2' => 'required',
 
                 //DATA DARI ADMIN
-                'nomor_surat_kematian' => 'required',
+                'nomor_surat' => 'required',
             ]);
 
             $data = $request->except('_token');
@@ -647,7 +648,17 @@ class PengajuanSuratController extends Controller
             }
         }
 
-        return Pdf::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadView($html, [
+        return Pdf::setOptions([
+            'isHtml5ParserEnabled' => true,
+            'isRemoteEnabled' => true,
+            'defaultPaperSize' => 'letter',
+            'defaultPaperOptions' => [
+                'margin_top' => 10, // Atur margin atas dalam inci
+                'margin_right' => 10, // Atur margin kanan dalam inci
+                'margin_bottom' => 0, // Atur margin bawah dalam inci
+                'margin_left' => 20, // Atur margin kiri dalam inci
+            ],
+        ])->loadView($html, [
             'pengajuan_surat' => $pengajuanSurat,
             'surat' => json_decode($pengajuanSurat->surat),
         ])->stream();

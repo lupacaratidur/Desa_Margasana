@@ -55,22 +55,12 @@
 
     <br <br <!-- Title -->
     <div align="center" style="text-align: center; margin-top: 1em;">
-        {{-- <table class="table" style="margin-right: -50% !important;">
-            <tbody>
-                <tr>
-                    <td rowspan="2" class="td fw-bold fs-1 text-uppercase">Surat</td>
-                    <td colspan="2" class="td fw-bold fs-1 text-uppercase" style="width: 150px;">Keterangan</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="td fw-bold fs-1 text-uppercase">Usaha</td>
-                </tr>
-            </tbody>
-        </table> --}}
-
-        <div class="fw-bold fs-1 text-uppercase">
-            <span style="border-bottom: 3px solid black; padding: -2px"> Surat Keterangan Usaha</span>
+        <div>
+            <span class="fw-bold fs-1 text-uppercase" style="border-bottom: 2px solid black; padding: -10px"> Surat
+                Keterangan Usaha</span>
+            <p class="fs-1" style="margin-top: 5px">Nomor : {{ $surat->nomor_surat }}</p>
         </div>
-        <p class="fs-1" style="padding: -5px">Nomor : {{ $surat->nomor_surat }}</p>
+
     </div>
 
     <!-- Content -->
@@ -81,11 +71,13 @@
         <table width="100%">
             <tr>
                 <td width="35%" class="fs-1">Nama</td>
-                <td class="fs-1"> : {{ $surat->nama }}</td>
+                <td class="fs-1 text-uppercase"> : {{ $surat->nama }}</td>
             </tr>
             <tr>
                 <td width="35%" class="fs-1">Tempat & Tanggal Lahir</td>
-                <td class="fs-1"> : {{ $surat->tempat_lahir }}, {{ $surat->ttl }}</td>
+                <td class="fs-1" style="text-transform: capitalize"> : {{ $surat->tempat_lahir }},
+                    {{ \Carbon\Carbon::parse($surat->ttl)->isoFormat('D-MM-Y') }}
+                </td>
             </tr>
             <tr>
                 <td width="35%" class="fs-1">Kewarganegaraan / Agama</td>
@@ -97,7 +89,7 @@
             </tr>
             <tr>
                 <td width="35%" class="fs-1">Tanda Bukti Diri</td>
-                <td class="fs-1"> : {{ $surat->nik }}</td>
+                <td class="fs-1"> : KTP No. {{ $surat->nik }}</td>
             </tr>
             <tr>
                 <td width="35%" class="fs-1">Lama Usaha</td>

@@ -67,10 +67,12 @@
             </tbody>
         </table> --}}
 
-        <div class="fw-bold fs-1 text-uppercase">
-            <span style="border: 1px solid black; padding: 10px"> Surat Keterangan/Pengantar</span>
+        <div>
+            <span class="fw-bold fs-1 text-uppercase" style="border-bottom: 2px solid black; padding: -10px"> Surat
+                Keterangan/Pengantar</span>
+            <p class="fs-1" style="margin-top: 5px">Nomor : {{ $surat->nomor_surat }}</p>
         </div>
-        <p class="fs-1">Nomor : {{ $surat->nomor_surat }}</p>
+
     </div>
 
     <!-- Content -->
@@ -81,11 +83,13 @@
         <table width="100%">
             <tr>
                 <td width="35%" class="fs-1">Nama</td>
-                <td class="fs-1"> : {{ $surat->nama }}</td>
+                <td class="fs-1 text-uppercase"> : {{ $surat->nama }}</td>
             </tr>
             <tr>
                 <td width="35%" class="fs-1">Tempat & Tanggal Lahir</td>
-                <td class="fs-1"> : {{ $surat->ttl }}</td>
+                <td class="fs-1 " style="text-transform: capitalize"> : {{ $surat->tempat_lahir }},
+                    {{ \Carbon\Carbon::parse($surat->ttl)->isoFormat('D-MM-Y') }}
+                </td>
             </tr>
             <tr>
                 <td width="35%" class="fs-1">Kewarganegaraan & Agama</td>
@@ -93,7 +97,7 @@
             </tr>
             <tr>
                 <td width="35%" class="fs-1">Pekerjaan</td>
-                <td class="fs-1"> : {{ $surat->pekerjaan }}</td>
+                <td class="fs-1 " style="text-transform: capitalize"> : {{ $surat->pekerjaan }}</td>
             </tr>
             <tr>
                 <td width="35%" class="fs-1">Status</td>
@@ -109,16 +113,17 @@
             </tr>
             <tr>
                 <td width="35%" class="fs-1">Keperluan</td>
-                <td class="fs-1"> : {{ $surat->keperluan }}</td>
+                <td class="fs-1" style="text-transform: capitalize"> : {{ $surat->keperluan }}</td>
             </tr>
             <tr>
                 <td width="35%" class="fs-1">Berlaku Mulai</td>
-                <td class="fs-1"> : {{ \Carbon\Carbon::parse($surat->berlaku_mulai)->isoFormat('dddd, D MMMM Y') }}
+                <td class="fs-1"> : {{ \Carbon\Carbon::parse($surat->berlaku_mulai)->isoFormat('D MMMM Y') }}
+                    s/d {{ \Carbon\Carbon::parse($surat->berlaku_sampai)->isoFormat('D MMMM Y') }}
                 </td>
             </tr>
             <tr>
                 <td width="35%" class="fs-1">Keterangan lain-lain</td>
-                <td class="fs-1"> : {{ $surat->keterangan_surat }}</td>
+                <td class="fs-1" style="text-transform: capitalize"> : {{ $surat->keterangan_surat }}</td>
             </tr>
         </table>
 
@@ -129,12 +134,25 @@
     <br>
     <br>
     <!-- Tanda Tangan -->
-    <div style="width: 100%;">
-        <div align="center" style="width: 250px; position: relative; right: -27em" class="fs-1">
-            <p>Margasana, {{ \Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</p>
-            <p style="margin-top: -10px !important">Kepala Desa Margasana</p>
-            <br <br <br <br <br <p style="margin-top: -10px !important">DODIT ARI WIBOWO, S.Farm.,Apt</p>
+    <div align="center" style="width: 250px; position: relative; right: -23.5em; float: left;" class="fs-1">
+        <p>Margasana, {{ \Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</p>
+    </div>
+
+
+    <br> <br> <br>
+    <div width="100%">
+        <div align="center" class="fs-1" style="width: 250px; position: relative; float: left; right: 2em">
+            <p style="margin-top: -10px !important">Pemohon</p>
+            <br><br><br><br><br><br>
+            <p style="margin-top: -10px !important" class="text-uppercase">{{ $surat->nama }}</p>
         </div>
+        <div align="center" class="fs-1" style="width: 250px; position: relative; right: -8em; float: left;">
+            <p style="margin-top: -10px !important">An.Kepala Desa Margasana</p>
+            <p style="margin-top: -10px !important">Sekdes</p>
+            <br><br><br><br><br>
+            <p style="margin-top: -10px !important">TOHIDIN</p>
+        </div>
+
     </div>
 </body>
 

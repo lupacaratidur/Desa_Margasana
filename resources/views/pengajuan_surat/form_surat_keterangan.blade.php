@@ -25,19 +25,29 @@
                         @enderror
                     </div>
                     <div class="flex flex-col mb-6">
-                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Tempat & Tanggal Lahir</label>
-                        <input type="text" name="ttl"
-                            class="mt-1 px-3 py-2 @error('ttl') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Contoh : Pati, 20 Agustus 2000" value="{{ old('ttl') }}" />
-                        @error('ttl')
+                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Tempat Lahir</label>
+                        <input type="text" name="tempat_lahir"
+                            class="mt-1 px-3 py-2 @error('tempat_lahir') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
+                            placeholder="Masukan tempat lahir anda" value="{{ old('tempat_lahir') }}" />
+                        @error('tempat_lahir')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="flex flex-col mb-6">
+                        <label class="after:content-['*'] after:ml-0.5 after:text-danger">Tanggal Lahir</label>
+                        <input type="date" name="ttl"
+                            class="mt-1 px-3 py-2 @error('ttl') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
+                            placeholder="Masukkan tanggal lahir anda" value="{{ old('ttl') }}" />
+                        @error('ttl')
+                            <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <div class="flex flex-col mb-6">
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Kewarganegaraan & Agama</label>
                         <input type="text" name="negara_agama"
                             class="mt-1 px-3 py-2 @error('negara_agama') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Kewarganegaraan & Agama" value="{{ old('negara_agama', 'WNI & Islam') }}" />
+                            placeholder="Kewarganegaraan & Agama" value="{{ old('negara_agama', 'Indonesia & Islam') }}" />
                         @error('negara_agama')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
@@ -53,9 +63,19 @@
                     </div>
                     <div class="flex flex-col mb-6">
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Status</label>
-                        <input type="text" name="status"
-                            class="mt-1 px-3 py-2 @error('status') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Kawin / Belum Kawin" value="{{ old('status') }}" />
+                        <div class="relative">
+                            <select
+                                class="appearance-none px-3 py-2 @error('status') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
+                                id="grid-state" name="status">
+                                <option value="">Pilih Status Perkawinan</option>
+                                <option value="Kawin">Kawin</option>
+                                <option value="Belum Kawin">Belum Kawin</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <i class='bx bx-chevron-down text-xl'></i>
+                            </div>
+                        </div>
                         @error('status')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
@@ -76,6 +96,8 @@
                     </div>
                     <div class="flex flex-col mb-6">
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Alamat</label>
+                        <small class="text-secondary">Contoh penulisan : RT 001/ RW 001 Desa Margasana Kecamatan
+                            Jatilawang</small>
                         <input type="text" name="alamat"
                             class="mt-1 px-3 py-2 @error('alamat') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
                             placeholder="Alamat" value="{{ old('alamat') }}" />
@@ -102,18 +124,6 @@
                         @enderror
                     </div>
                 </div>
-            </div>
-
-            <div class="w-full mb-6">
-                <label class="after:ml-0.5 after:text-danger">Pesan</label>
-                <small class="text-secondary">Pastikan sampaikan pesan kepada admin/petugas dengan jelas
-                    untuk mempercepat pembuatan surat</small>
-                <textarea id="keterangan" name="pesan" rows="4"
-                    class="px-3 py-2 focus:outline-none @error('pesan') border-danger @else border-gray @enderror focus:border-gray focus:ring-gray"
-                    placeholder="Masukkan pesan surat atau pesan anda kepada petugas.">{{ old('pesan') }}</textarea>
-                @error('pesan')
-                    <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
-                @enderror
             </div>
 
             <div class="flex justify-end">

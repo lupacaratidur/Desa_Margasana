@@ -61,7 +61,15 @@
                     </tr>
                     <tr>
                         <td class="w-[40%] lg:w-[15%] font-bold">
-                            Tempat tanggal lahir
+                            Tempat Lahir
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ $surat->tempat_lahir }} <br> <br></td>
+                    </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Tanggal lahir
                         </td>
                     </tr>
                     <tr>
@@ -114,14 +122,6 @@
                     </tr>
                     <tr>
                         <td>{{ $surat->keterangan_surat }} <br> <br></td>
-                    </tr>
-                    <tr>
-                        <td class="w-[40%] lg:w-[15%] font-bold">
-                            Pesan untuk petugas/admin
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>{{ $pengajuan_surat->pesan }} <br> <br></td>
                     </tr>
                 </table>
             </div>
@@ -667,7 +667,7 @@
                             </tr>
                         </table>
                     </div>
-                    --}}
+
                 </div>
             </div>
     @endif
