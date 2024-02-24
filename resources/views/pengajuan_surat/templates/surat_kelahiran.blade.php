@@ -104,9 +104,9 @@
             /* Sesuaikan jarak antara : dan border */
         }
 
-        .with-border51::before {
+        .with-border57::before {
             content: ': ';
-            margin-left: 51px;
+            margin-left: 57px;
             /* Sesuaikan jarak antara : dan border */
         }
 
@@ -157,6 +157,12 @@
             margin-left: -150px;
             /* Sesuaikan jarak antara : dan border */
         }
+
+        .with-border50::before {
+            content: ': ';
+            margin-left: 50px;
+            /* Sesuaikan jarak antara : dan border */
+        }
     </style>
 </head>
 {{--  --}}
@@ -167,20 +173,26 @@
     <!-- KOP SURAT -->
 
     <div style="margin-top: -30px; margin-bottom: 25px;">
-        <table width="100%">
+        <table>
             <tr>
                 <td class="fs-1">
                     Pemerintah Desa/Kelurahan
                 </td>
-                <td class="fs-1 with-border10" style="padding-left:-30px"><a>MARGASANA</a>
+                <td class="fs-1 with-border50">
+                    <a>MARGASANA</a>
                 </td>
-
+                <td class="fs-1" style=" padding-left:380px">
+                    <a style="border: 1px solid black;">Kode F.201</a>
+                </td>
             </tr>
             <tr>
                 <td class="fs-1">
                     Kecamatan
                 </td>
-                <td class="fs-1 with-border10"><a>JATILAWANG</a>
+                <td class="fs-1
+                    with-border50"><a>JATILAWANG</a>
+                </td>
+                <td class="fs-1" style=" padding-left:340px"><a>Lembar 1 : UPTD/Instansi</a>
                 </td>
 
             </tr>
@@ -188,7 +200,10 @@
                 <td class="fs-1">
                     Kabupaten
                 </td>
-                <td class="fs-1 with-border10"><a>BANYUMAS</a>
+                <td class="fs-1
+                    with-border50"><a>BANYUMAS</a>
+                </td>
+                <td class="fs-1" style=" padding-left:340px"><a>Lembar 2 : Untuk yang</a>
                 </td>
 
             </tr>
@@ -196,8 +211,12 @@
                 <td class="fs-1">
                     Kode Wilayah
                 </td>
-                <td class="fs-1 with-border10">
+                <td class="fs-1
+                    with-border50">
                     <a style="border: 1px solid black">872465982473598</a>
+                </td>
+                <td class="fs-1" style=" padding-left:340px">
+                    <a>Lembar 3 : Desa/kelurahan</a>
                 </td>
 
             </tr>
@@ -521,17 +540,17 @@
         </tr>
         <tr>
             <td class="fs-1">1. NIK</td>
-            <td class="fs-1 with-border51"><a class="fs-1"
+            <td class="fs-1 with-border57"><a class="fs-1"
                     style="border: 1px solid black; padding: 2px 10px 0px 2px;">{{ $surat->nik_pelapor }}</a></td>
         </tr>
         <tr>
             <td class="fs-1">2. Nama Lengkap</td>
-            <td class="fs-1 with-border51"><a class="fs-1 text-uppercase"
+            <td class="fs-1 with-border57"><a class="fs-1 text-uppercase"
                     style="border: 1px solid black; padding: 2px 60px 0px 2px;">{{ $surat->nama_pelapor }}</a></td>
         </tr>
         <tr>
             <td class="fs-1">3. Umur</td>
-            <td class="fs-1 with-border51">
+            <td class="fs-1 with-border57">
                 <a>Umur </a>
                 <a class="fs-1"
                     style="border: 1px solid black; padding: 2px 10px 0px 10px;">{{ $surat->umur_pelapor }}</a>
@@ -539,25 +558,25 @@
         </tr>
         <tr>
             <td class="fs-1">4. Jenis Kelamin</td>
-            <td class="fs-1 with-border51"><a class="fs-1"
+            <td class="fs-1 with-border57"><a class="fs-1"
                     style="border: 1px solid black; padding: 2px 15px 0px 2px;">{{ $surat->kelamin_pelapor }}</a>
                 <a style="margin-right: 50px; margin-left: 40px">1. Laki-laki </a> <a>2. Perempuan</a>
             </td>
         </tr>
         <tr>
             <td class="fs-1">5. Pekerjaan</td>
-            <td class="fs-1 with-border51"><a class="fs-1"
+            <td class="fs-1 with-border57"><a class="fs-1"
                     style="border: 1px solid black; padding: 2px 60px 0px 2px; text-transform:capitalize">{{ $surat->pekerjaan_pelapor }}</a>
             </td>
         </tr>
         <tr>
             <td class="fs-1">6. Alamat</td>
-            <td class="fs-1 with-border51"><a class="fs-1"
+            <td class="fs-1 with-border57"><a class="fs-1"
                     style="border: 1px solid black; padding: 2px 60px 0px 2px; text-transform:capitalize">{{ $surat->alamat_pelapor }}</a>
             </td>
         <tr>
             <td style="margin-right: 10px"></td>
-            <td class="fs-1" style="padding-left:56px">a. Desa / Kelurahan </td>
+            <td class="fs-1" style="padding-left:65px">a. Desa / Kelurahan </td>
             <td class="fs-1 with-border0150"><a class="fs-1"
                     style="border: 1px solid black; padding: 2px 10px 0px 2px;">MARGASANA
                 </a></td>
@@ -567,7 +586,7 @@
         </tr>
         <tr>
             <td> </td>
-            <td class="fs-1" style="padding-left:56px">b. Kecamatan</td>
+            <td class="fs-1" style="padding-left:65px">b. Kecamatan</td>
             <td class="fs-1 with-border0150"><a class="fs-1"
                     style="border: 1px solid black; padding: 2px 10px 0px 2px;">JATILAWANG</a></td>
             <td class="fs-1">d. Provinsi</td>
@@ -586,17 +605,17 @@
         </tr>
         <tr>
             <td class="fs-1">1. NIK</td>
-            <td class="fs-1 with-border51"><a class="fs-1"
+            <td class="fs-1 with-border57"><a class="fs-1"
                     style="border: 1px solid black; padding: 2px 10px 0px 2px;">{{ $surat->nik_saksi1 }}</a></td>
         </tr>
         <tr>
             <td class="fs-1">2. Nama Lengkap</td>
-            <td class="fs-1 with-border51"><a class="fs-1 text-uppercase"
+            <td class="fs-1 with-border57"><a class="fs-1 text-uppercase"
                     style="border: 1px solid black; padding: 2px 60px 0px 2px;">{{ $surat->nama_saksi1 }}</a></td>
         </tr>
         <tr>
             <td class="fs-1">3. Umur</td>
-            <td class="fs-1 with-border51">
+            <td class="fs-1 with-border57">
                 <a>Umur </a>
                 <a class="fs-1"
                     style="border: 1px solid black; padding: 2px 10px 0px 10px;">{{ $surat->umur_saksi1 }}</a>
@@ -605,18 +624,18 @@
 
         <tr>
             <td class="fs-1">4. Pekerjaan</td>
-            <td class="fs-1 with-border51"><a class="fs-1"
+            <td class="fs-1 with-border57"><a class="fs-1"
                     style="border: 1px solid black; padding: 2px 60px 0px 2px; text-transform:capitalize">{{ $surat->pekerjaan_saksi1 }}</a>
             </td>
         </tr>
         <tr>
             <td class="fs-1">5. Alamat</td>
-            <td class="fs-1 with-border51"><a class="fs-1"
+            <td class="fs-1 with-border57"><a class="fs-1"
                     style="border: 1px solid black; padding: 2px 60px 0px 2px; text-transform:capitalize">{{ $surat->alamat_saksi1 }}</a>
             </td>
         <tr>
             <td style="margin-right: 10px"></td>
-            <td class="fs-1" style="padding-left: 56px">a. Desa / Kelurahan</td>
+            <td class="fs-1" style="padding-left: 65px">a. Desa / Kelurahan</td>
             <td class="fs-1 with-border0150" style="padding-left: 115px"><a class="fs-1"
                     style="border: 1px solid black; padding: 2px 10px 0px 2px;">MARGASANA</a></td>
             <td class="fs-1 with-border0100v2">c. Kab/Kota</td>
@@ -625,7 +644,7 @@
         </tr>
         <tr>
             <td> </td>
-            <td class="fs-1 with-border10v2" style="padding-left: 45px">b. Kecamatan</td>
+            <td class="fs-1 with-border10v2" style="padding-left: 55px">b. Kecamatan</td>
             <td class="fs-1 with-border0150" style="padding-left: 115px"><a class="fs-1"
                     style="border: 1px solid black; padding: 2px 10px 0px 2px;">JATILAWANG</a></td>
             <td class="fs-1">d. Provinsi</td>
@@ -675,7 +694,7 @@
             </td>
         <tr>
             <td style="margin-right: 10px"></td>
-            <td class="fs-1" style="padding-left: 45px">a. Desa / Kelurahan</td>
+            <td class="fs-1" style="padding-left: 55px">a. Desa / Kelurahan</td>
             <td class="fs-1 with-border0150" style="padding-left: 115px"><a class="fs-1"
                     style="border: 1px solid black; padding: 2px 10px 0px 2px;">MARGASANA</a></td>
             <td class="fs-1 with-border0100v2">c. Kab/Kota</td>
@@ -684,7 +703,7 @@
         </tr>
         <tr>
             <td> </td>
-            <td class="fs-1 with-border10v2" style="padding-left: 35px">b. Kecamatan</td>
+            <td class="fs-1 with-border10v2" style="padding-left: 45px">b. Kecamatan</td>
             <td class="fs-1 with-border0150" style="padding-left: 115px"><a class="fs-1"
                     style="border: 1px solid black; padding: 2px 10px 0px 2px;">JATILAWANG</a></td>
             <td class="fs-1">d. Provinsi</td>
