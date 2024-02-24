@@ -162,6 +162,18 @@
                 </a>
             </div>
         </div>
+        <div class="flex flex-col lg:flex-row pb-5 px-10 justify-center w-full">
+            <div class="w-full mb-3">
+                <a href="{{ route('pengajuan-surat.create', ['surat' => 'keterangan_izin_penelitian']) }}">
+                    <div
+                        class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5">
+                        <img class="w-[70px] text-center lg:w-[100px] mx-auto"
+                            src="{{ asset('/img/keterangan_pengantar.png') }}" alt="">
+                        <p class="py-1 text-md text-dark">Surat Keterangan Izin Penelitian</p>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="flex justify-between">
 

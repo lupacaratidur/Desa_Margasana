@@ -53,6 +53,10 @@ class PengajuanSuratController extends Controller
             return view('pengajuan_surat.form_surat_keterangan_tidak_mampu', [
                 'title' => 'Pengajuan Surat Keterangan Tidak Mampu',
             ]);
+        } elseif ($request->surat === 'keterangan_izin_penelitian') {
+            return view('pengajuan_surat.form_surat_keterangan_izin_penelitian', [
+                'title' => 'Pengajuan Surat Keterangan Izin Penelitian',
+            ]);
         } else {
             return redirect()->route('pengajuan-surat.index');
         }
@@ -267,6 +271,19 @@ class PengajuanSuratController extends Controller
 
             $data = $request->except('_token');
             $data['jenis_surat'] = 'Surat Keterangan Tidak Mampu';
+        } elseif ($request->jenis_surat == 'keterangan_izin_penelitian') {
+            $request->validate([
+                'nama' => 'required',
+                'nim' => 'required',
+                'univ' => 'required',
+                'prodi' => 'required',
+                'judul_penelitian' => 'required',
+                'awal_penelitian' => 'required',
+                'akhir_penelitian' => 'required',
+            ]);
+
+            $data = $request->except('_token');
+            $data['jenis_surat'] = 'Surat Keterangan Izin Penelitian';
         }
 
 
@@ -356,6 +373,11 @@ class PengajuanSuratController extends Controller
                 } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Tidak Mampu') {
                     return view('pengajuan_surat.proses_surat_keterangan_tidak_mampu', [
                         'title' => 'Proses Surat Keterangan Tidak Mampu',
+                        'pengajuan_surat' => $pengajuanSurat
+                    ]);
+                } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Izin Penelitian') {
+                    return view('pengajuan_surat.proses_surat_keterangan_izin_penelitian', [
+                        'title' => 'Proses Surat Keterangan Izin Penelitian',
                         'pengajuan_surat' => $pengajuanSurat
                     ]);
                 } else {
@@ -584,8 +606,19 @@ class PengajuanSuratController extends Controller
                 'nik' => 'required',
                 'nomor_surat' => 'required',
 
+            ]);
 
-
+            $data = $request->except('_token');
+        } elseif ($pengajuanSurat->jenis_surat == 'Surat Keterangan Izin Penelitian') {
+            $request->validate([
+                'nama' => 'required',
+                'nim' => 'required',
+                'univ' => 'required',
+                'prodi' => 'required',
+                'judul_penelitian' => 'required',
+                'awal_penelitian' => 'required',
+                'akhir_penelitian' => 'required',
+                'nomor_surat' => 'required',
             ]);
 
             $data = $request->except('_token');
@@ -624,6 +657,8 @@ class PengajuanSuratController extends Controller
                     $html = 'pengajuan_surat.templates.surat_keterangan_domisili';
                 } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Tidak Mampu') {
                     $html = 'pengajuan_surat.templates.surat_keterangan_tidak_mampu';
+                } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Izin Penelitian') {
+                    $html = 'pengajuan_surat.templates.surat_keterangan_izin_penelitian';
                 } else {
                     return redirect()->route('pengajuan-surat.index');
                 }
@@ -643,6 +678,8 @@ class PengajuanSuratController extends Controller
                 $html = 'pengajuan_surat.templates.surat_keterangan_domisili';
             } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Tidak Mampu') {
                 $html = 'pengajuan_surat.templates.surat_keterangan_tidak_mampu';
+            } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Izin Penelitian') {
+                $html = 'pengajuan_surat.templates.surat_keterangan_izin_penelitian';
             } else {
                 return redirect()->route('pengajuan-surat.index');
             }
@@ -681,6 +718,8 @@ class PengajuanSuratController extends Controller
                     $html = 'pengajuan_surat.templates.surat_keterangan_domisili';
                 } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Tidak Mampu') {
                     $html = 'pengajuan_surat.templates.surat_keterangan_tidak_mampu';
+                } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Izin Penelitian') {
+                    $html = 'pengajuan_surat.templates.surat_keterangan_izin_penelitian';
                 } else {
                     return redirect()->route('pengajuan-surat.index');
                 }
@@ -700,6 +739,8 @@ class PengajuanSuratController extends Controller
                 $html = 'pengajuan_surat.templates.surat_keterangan_domisili';
             } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Tidak Mampu') {
                 $html = 'pengajuan_surat.templates.surat_keterangan_tidak_mampu';
+            } elseif ($pengajuanSurat->jenis_surat === 'Surat Keterangan Izin Penelitian') {
+                $html = 'pengajuan_surat.templates.surat_keterangan_izin_penelitian';
             } else {
                 return redirect()->route('pengajuan-surat.index');
             }

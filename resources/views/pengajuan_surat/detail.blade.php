@@ -1417,4 +1417,70 @@
             </div>
         </div>
     @endif
+
+    @if ($pengajuan_surat->jenis_surat == 'Surat Keterangan Izin Penelitian')
+        <div class="bg-white py-6 px-9 mb-5 rounded-lg w-full">
+            <div class="overflow-x">
+                <table class="w-full mt-10 bg-divide-y overflow-hidden">
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Nama
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ $surat->nama }} <br> <br></td>
+
+                    </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            NIM
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ $surat->nim }} <br> <br></td>
+                    </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Perguruan Tinggi
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ $surat->univ }} <br> <br></td>
+                    </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Program Studi
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ $surat->prodi }} <br> <br></td>
+                    </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Awal Penelitian
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ $surat->awal_penelitian }} <br> <br></td>
+                    </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Akhir Penelitian
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ $surat->akhir_penelitian }} <br> <br></td>
+                    </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Judul Penelitian
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ $surat->judul_penelitian }} <br> <br></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    @endif
 @endsection
