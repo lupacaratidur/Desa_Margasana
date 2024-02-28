@@ -708,7 +708,7 @@
                         <tr>
                             <td>{{ $surat->nik_jenazah }} <br> <br></td>
                         </tr>
-                        {{--
+
 
                         <tr>
                             <td class="w-[40%] lg:w-[15%] font-bold">
@@ -856,6 +856,7 @@
                         </tr>
                     </table>
                 </div>
+
                 <div class="w-full ">
                     <h1 class="text-2xl text-dark">Informasi Ayah</h1>
                     <table class="w-full mt-5 bg-divide-y overflow-hidden">
@@ -926,6 +927,7 @@
 
                     </table>
                 </div>
+
                 <div class="w-full ">
                     <h1 class="text-2xl text-dark">Informasi Ibu</h1>
                     <table class="w-full mt-5 bg-divide-y overflow-hidden">
@@ -1075,6 +1077,7 @@
                     </table>
                 </div>
 
+
                 <div class="w-full ">
                     <h1 class="text-2xl text-dark">Informasi Saksi 1</h1>
                     <table class="w-full mt-5 bg-divide-y overflow-hidden">
@@ -1214,7 +1217,7 @@
                         </tr>
 
                     </table>
-                    --}}
+
                 </div>
             </div>
         </div>

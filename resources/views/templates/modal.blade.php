@@ -93,39 +93,49 @@
 
 
 <div id="modalBuatSurat"
-    class="hidden fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] lg:w-[40vw] bg-white rounded-md px-8 py-6 space-y-5 drop-shadow-lg">
+    class="hidden fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600vw] lg:w-[400vw] bg-white rounded-md px-8 py-6 space-y-5 drop-shadow-lg">
 
     <div class="dialog-body-buat-surat mb-4 text-center">
         <h1 class="text-xl lg:text-2xl font-semibold text-dark mb-4">Pilih Jenis Surat</h1>
 
-        <div class="flex flex-col lg:flex-row pb-1 px-10 justify-center w-full">
-            <div class="w-full mb-3">
+        <div class="flex flex-col lg:flex-row pb-1 px-100 justify-center w-full">
+            <div class="w-full mb-4">
                 <a href="{{ route('pengajuan-surat.create', ['surat' => 'keterangan']) }}">
-                    <div
-                        class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5">
+                    <div class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5"
+                        style="margin-left:20px; margin-right:20px">
                         <img class="w-[70px] text-center lg:w-[100px] mx-auto"
                             src="{{ asset('/img/keterangan_pengantar.png') }}" alt="">
                         <p class="py-1 text-md text-dark">Surat Keterangan</p>
                     </div>
                 </a>
             </div>
-            <div class="w-full mb-3">
+            <div class="w-full mb-4">
                 <a href="{{ route('pengajuan-surat.create', ['surat' => 'kelahiran']) }}">
-                    <div
-                        class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5">
+                    <div class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5"
+                        style="margin-left:20px; margin-right:20px">
                         <img class="w-[70px] text-center lg:w-[90px] mx-auto" src="{{ asset('/img/kelahiran.png') }}"
                             alt="">
                         <p class="py-1 text-md text-dark">Surat Kelahiran</p>
                     </div>
                 </a>
             </div>
-            <div class="w-full mb-3">
+            <div class="w-full mb-4">
                 <a href="{{ route('pengajuan-surat.create', ['surat' => 'kematian']) }}">
-                    <div
-                        class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5">
+                    <div class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5"
+                        style="margin-left:20px; margin-right:20px">
                         <img class="w-[70px] text-center lg:w-[160px] mx-auto" src="{{ asset('/img/kematian.png') }}"
                             alt="">
                         <p class="py-1 text-md text-dark">Surat Kematian</p>
+                    </div>
+                </a>
+            </div>
+            <div class="w-full mb-4">
+                <a href="{{ route('pengajuan-surat.create', ['surat' => 'keterangan_izin_penelitian']) }}">
+                    <div class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5"
+                        style="margin-left:20px; margin-right:20px">
+                        <img class="w-[70px] text-center lg:w-[100px] mx-auto"
+                            src="{{ asset('/img/keterangan_pengantar.png') }}" alt="">
+                        <p class="py-1 text-md text-dark">Surat Keterangan Izin Penelitian</p>
                     </div>
                 </a>
             </div>
@@ -158,18 +168,6 @@
                         <img class="w-[70px] text-center lg:w-[160px] mx-auto" src="{{ asset('/img/kematian.png') }}"
                             alt="">
                         <p class="py-1 text-md text-dark">Surat Keterangan Tidak Mampu</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="flex flex-col lg:flex-row pb-5 px-10 justify-center w-full">
-            <div class="w-full mb-3">
-                <a href="{{ route('pengajuan-surat.create', ['surat' => 'keterangan_izin_penelitian']) }}">
-                    <div
-                        class="w-36 lg:w-40 h-32 lg:h-48 mx-auto border-solid border-2 border-dark rounded-lg p-3 lg:p-5">
-                        <img class="w-[70px] text-center lg:w-[100px] mx-auto"
-                            src="{{ asset('/img/keterangan_pengantar.png') }}" alt="">
-                        <p class="py-1 text-md text-dark">Surat Keterangan Izin Penelitian</p>
                     </div>
                 </a>
             </div>

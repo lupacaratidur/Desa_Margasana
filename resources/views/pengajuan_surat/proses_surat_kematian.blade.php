@@ -89,14 +89,13 @@
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
                     </div>
-                    {{--
+
 
                     <div class="flex flex-col mb-6">
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Nama Lengkap</label>
                         <input type="text" name="nama_jenazah"
                             class="mt-1 px-3 py-2 @error('nama_jenazah') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Contoh : Pati, 20 Agustus 2000"
-                            value="{{ old('nama_jenazah', $surat->nama_jenazah) }}" />
+                            placeholder="" value="{{ old('nama_jenazah', $surat->nama_jenazah) }}" />
                         @error('nama_jenazah')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
@@ -109,10 +108,10 @@
                                 class="appearance-none px-3 py-2 @error('kelamin_jenazah') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
                                 id="grid-state" name="kelamin_jenazah">
                                 <option value="">Pilih Jenis Kelamin</option>
-                                <option value="laki-laki" {{ $surat->kelamin_jenazah == 'laki-laki' ? 'selected' : '' }}>
+                                <option value="1" {{ $surat->kelamin_jenazah == '1' ? 'selected' : '' }}>
                                     Laki-Laki
                                 </option>
-                                <option value="perempuan" {{ $surat->kelamin_jenazah == 'perempuan' ? 'selected' : '' }}>
+                                <option value="2" {{ $surat->kelamin_jenazah == '2' ? 'selected' : '' }}>
                                     Perempuan
                                 </option>
                             </select>
@@ -130,7 +129,8 @@
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Tanggal Lahir</label>
                         <input type="number" name="tgl_lahir_jenazah"
                             class="mt-1 px-3 py-2 @error('tgl_lahir_jenazah') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Masukan tanggal lahir bayi" value="{{ $surat->tgl_lahir_jenazah }}" />
+                            placeholder="Masukan tanggal lahir bayi" value="{{ $surat->tgl_lahir_jenazah }}" min="1"
+                            max="31" />
                         @error('tgl_lahir_jenazah')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
@@ -140,7 +140,7 @@
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Bulan Lahir</label>
                         <input type="number" name="bln_lahir_jenazah"
                             class="mt-1 px-3 py-2 @error('bln_lahir_jenazah') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Masukan tanggal lahir bayi" value="{{ $surat->bln_lahir_jenazah }}" />
+                            placeholder="" value="{{ $surat->bln_lahir_jenazah }}" />
                         @error('bln_lahir_jenazah')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
@@ -158,14 +158,14 @@
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Umur</label>
                         <input type="number" name="umur_jenazah"
                             class="mt-1 px-3 py-2 @error('umur_jenazah') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                            placeholder="Masukan tanggal lahir bayi" value="{{ $surat->umur_jenazah }}" />
+                            placeholder="" value="{{ $surat->umur_jenazah }}" />
                         @error('umur_jenazah')
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="flex flex-col mb-6">
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Tempat Lahir </label>
-                        <input type="number" name="tempat_lahir_jenazah"
+                        <input type="text" name="tempat_lahir_jenazah"
                             class="mt-1 px-3 py-2 @error('tempat_lahir_jenazah') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
                             placeholder="Masukan tanggal lahir bayi" value="{{ $surat->tempat_lahir_jenazah }}" />
                         @error('tempat_lahir_jenazah')
@@ -309,7 +309,7 @@
                         </div>
                         <div class="flex flex-col mb-6">
                             <label class="after:content-['*'] after:ml-0.5 after:text-danger">Tempat Kematian</label>
-                            <textarea id="tempat_mati_jenazah" name="tempat_mati_jenazah" rows="4"
+                            <textarea id="tempat_mati_jenazah" name="tempat_mati_jenazah" rows="1"
                                 class="px-3 py-2 focus:outline-none @error('tempat_mati_jenazah') border-danger @else border-gray @enderror focus:border-gray focus:ring-gray"
                                 placeholder="Alamat">{{ old('tempat_mati_jenazah', $surat->tempat_mati_jenazah) }}</textarea>
                             @error('tempat_mati_jenazah')
@@ -317,24 +317,28 @@
                             @enderror
                         </div>
                         <div class="flex flex-col mb-6">
-                            <label class="after:content-['*'] after:ml-0.5 after:text-danger">Sebab Kematian</label>
+                            <label class="after:content-['*'] after:ml-0.5 after:text-danger">Yang Menerangkan</label>
                             <div class="relative">
                                 <select
-                                    class="appearance-none px-3 py-2 @error('sebab_mati_jenazah') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
-                                    id="grid-state" name="sebab_mati_jenazah">
+                                    class="appearance-none px-3 py-2 @error('yang_menerangkan_jenazah') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
+                                    id="grid-state" name="yang_menerangkan_jenazah">
                                     <option value="">Pilih Sebab Kematian</option>
-                                    <option value="1"{{ $surat->sebab_mati_jenazah == '1' ? 'selected' : '' }}>1.
+                                    <option value="1"{{ $surat->yang_menerangkan_jenazah == '1' ? 'selected' : '' }}>
+                                        1.
                                         Dokter
                                     </option>
-                                    <option value="2"{{ $surat->sebab_mati_jenazah == '2' ? 'selected' : '' }}>
+                                    <option value="2"{{ $surat->yang_menerangkan_jenazah == '2' ? 'selected' : '' }}>
                                         2. Bidan/Perawat</option>
-                                    <option value="3"{{ $surat->sebab_mati_jenazah == '3' ? 'selected' : '' }}>3.
+                                    <option value="3"{{ $surat->yang_menerangkan_jenazah == '3' ? 'selected' : '' }}>
+                                        3.
                                         Tenaga Kesehatan
                                     </option>
-                                    <option value="4"{{ $surat->sebab_mati_jenazah == '4' ? 'selected' : '' }}>4.
+                                    <option value="4"{{ $surat->yang_menerangkan_jenazah == '4' ? 'selected' : '' }}>
+                                        4.
                                         Kepolisian
                                     </option>
-                                    <option value="5"{{ $surat->sebab_mati_jenazah == '5' ? 'selected' : '' }}>5.
+                                    <option value="5"{{ $surat->yang_menerangkan_jenazah == '5' ? 'selected' : '' }}>
+                                        5.
                                         Lainnya
                                     </option>
                                 </select>
@@ -343,7 +347,7 @@
                                     <i class='bx bx-chevron-down text-xl'></i>
                                 </div>
                             </div>
-                            @error('sebab_mati_jenazah')
+                            @error('yang_menerangkan_jenazah')
                                 <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                             @enderror
                         </div>
@@ -437,6 +441,7 @@
                         </div>
 
                     </div>
+
                     <div
                         class="w-full
                 [&>div>input]:border [&>div>input]:p-2.5 [&>div>input]:shadow-sm [&>div>input]:placeholder-secondary [&>div>input]:text-secondary [&>div>input]:w-full [&>div>input]:block [&>div>input]:rounded-lg [&>div>input]:sm:text-sm
@@ -599,12 +604,12 @@
                                     class="appearance-none px-3 py-2 @error('kelamin_pelapor_jenazah') border-danger @else border-gray @enderror focus:outline-none focus:border-gray focus:ring-gray focus:ring-1"
                                     id="grid-state" name="kelamin_pelapor_jenazah">
                                     <option value="">Pilih Jenis Kelamin</option>
-                                    <option value="laki-laki"
-                                        {{ $surat->kelamin_pelapor_jenazah == 'laki-laki' ? 'selected' : '' }}>
+                                    <option value="1"
+                                        {{ $surat->kelamin_pelapor_jenazah == '1' ? 'selected' : '' }}>
                                         Laki-Laki
                                     </option>
-                                    <option value="perempuan"
-                                        {{ $surat->kelamin_pelapor_jenazah == 'perempuan' ? 'selected' : '' }}>
+                                    <option value="2"
+                                        {{ $surat->kelamin_pelapor_jenazah == '2' ? 'selected' : '' }}>
                                         Perempuan
                                     </option>
                                 </select>
@@ -640,6 +645,7 @@
                         </div>
 
                     </div>
+
 
                     <div
                         class="w-full
@@ -817,7 +823,7 @@
                         </div>
 
                     </div>
-                    --}}
+
                 </div>
 
 
