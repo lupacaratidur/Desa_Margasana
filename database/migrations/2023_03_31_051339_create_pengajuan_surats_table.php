@@ -34,6 +34,7 @@ return new class extends Migration
                 ]
             );
             $table->json('surat');
+            $table->text('foto_ktp');
             $table->enum('status', ['Pending', 'Menunggu Persetujuan', 'Diproses', 'Selesai', 'Ditolak']);
             $table->timestamps();
         });

@@ -123,6 +123,16 @@
                     <tr>
                         <td>{{ $surat->keterangan_surat }} <br> <br></td>
                     </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Foto KTP
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <img src="{{ asset($url_foto_ktp) }}" alt="Foto KTP">
+                            <br> <br>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>

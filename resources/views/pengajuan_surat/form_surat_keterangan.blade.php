@@ -123,6 +123,16 @@
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
                     </div>
+                    <div class="flex flex-col mb-6">
+                        <label for="foto_ktp">Foto KTP</label>
+                        <img src="" class="previewImage">
+                        <input
+                            class="file:mr-5 file:py-2 file:px-6 file:border-0 file:text-sm file:font-medium file:bg-dark file:text-white @error('foto_ktp') border-danger @else border-gray @enderror focus:border-gray focus:ring-gray cursor-pointer focus:outline-none"
+                            id="foto_ktp" type="file" name="foto_ktp" onchange="previewImage()">
+                        @error('foto_ktp')
+                            <p class="mt-1 text-xs text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
                 </div>
             </div>
 
