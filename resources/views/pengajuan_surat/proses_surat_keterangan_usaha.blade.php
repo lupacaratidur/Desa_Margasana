@@ -120,6 +120,10 @@
                                 <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                             @enderror
                         </div>
+                        <div class="flex flex-col mb-6">
+                            <label class="after:ml-0.5 after:text-danger">Foto KTP</label>
+                            <img src="{{ asset('storage/' . $pengajuan_surat->foto_ktp) }}" width="250">
+                        </div>
 
                     </div>
                     <div class="w-full ">

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('masyarakat_id')->unsigned();
             $table->foreign('masyarakat_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->text('pesan')->nullable();
             $table->enum(
                 'jenis_surat',
                 [
@@ -34,7 +33,7 @@ return new class extends Migration
                 ]
             );
             $table->json('surat');
-            $table->text('foto_ktp');
+            $table->string('foto_ktp');
             $table->enum('status', ['Pending', 'Menunggu Persetujuan', 'Diproses', 'Selesai', 'Ditolak']);
             $table->timestamps();
         });

@@ -44,7 +44,7 @@
 </head>
 
 
-<body style="margin: 0px 10px;">
+<body style="margin: 50px 10px;">
 
 
     <!-- Kop Surat -->
@@ -78,7 +78,7 @@
     <!-- Content -->
 
     <div style="margin-top: 50px;">
-        <div class="fs-1" style="margin-bottom: 10px;">Yang bertanda tangan dibawah ini atas nama Kepala Desa
+        <div class="fs-1" style="margin-bottom: 10px;"> Yang bertanda tangan dibawah ini atas nama Kepala Desa
             margasana Kecamatan Jatilawang Kabupaten Banyumas menerangkan bahwa :</div>
         <table width="100%">
             <tr>

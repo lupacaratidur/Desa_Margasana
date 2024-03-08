@@ -44,7 +44,7 @@
 </head>
 
 
-<body style="margin: 0px 10px;">
+<body style="margin: 50px 10px;">
 
 
     <!-- Kop Surat -->

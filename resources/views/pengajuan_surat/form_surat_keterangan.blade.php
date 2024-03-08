@@ -15,6 +15,7 @@
                     class="w-full 
                 [&>div>input]:border [&>div>input]:p-2.5 [&>div>input]:shadow-sm [&>div>input]:placeholder-secondary [&>div>input]:text-secondary [&>div>input]:w-full [&>div>input]:block [&>div>input]:rounded-lg [&>div>input]:sm:text-sm
                 ">
+
                     <div class="flex flex-col mb-6">
                         <label class="after:content-['*'] after:ml-0.5 after:text-danger">Nama</label>
                         <input type="text" name="nama"
@@ -123,12 +124,12 @@
                             <p class="mt-1 text-xs text-danger" id="file_input_help">{{ $message }}</p>
                         @enderror
                     </div>
+
                     <div class="flex flex-col mb-6">
                         <label for="foto_ktp">Foto KTP</label>
-                        <img src="" class="previewImage">
                         <input
                             class="file:mr-5 file:py-2 file:px-6 file:border-0 file:text-sm file:font-medium file:bg-dark file:text-white @error('foto_ktp') border-danger @else border-gray @enderror focus:border-gray focus:ring-gray cursor-pointer focus:outline-none"
-                            id="foto_ktp" type="file" name="foto_ktp" onchange="previewImage()">
+                            id="foto_ktp" type="file" name="foto_ktp">
                         @error('foto_ktp')
                             <p class="mt-1 text-xs text-danger">{{ $message }}</p>
                         @enderror

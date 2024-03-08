@@ -76,7 +76,8 @@ class PengajuanSuratController extends Controller
                 'pekerjaan' => 'required',
                 'alamat' => 'required',
                 'keperluan' => 'required',
-                'foto_ktp' => 'required|image',
+                'keterangan_surat' => 'required',
+                'foto_ktp' => 'nullable|image|max:2048'
             ]);
 
             $data = $request->except('_token');
@@ -244,6 +245,7 @@ class PengajuanSuratController extends Controller
                 'nik' => 'required',
                 'lama_usaha' => 'required',
                 'nama_usaha' => 'required',
+                'foto_ktp' => 'nullable|image|max:2048'
             ]);
 
             $data = $request->except('_token');
@@ -257,6 +259,7 @@ class PengajuanSuratController extends Controller
                 'pekerjaan' => 'required',
                 'status' => 'required',
                 'agama' => 'required',
+                'foto_ktp' => 'nullable|image|max:2048'
             ]);
 
             $data = $request->except('_token');
@@ -268,6 +271,7 @@ class PengajuanSuratController extends Controller
                 'ttl' => 'required',
                 'alamat' => 'required',
                 'nik' => 'required',
+                'foto_ktp' => 'nullable|image|max:2048'
             ]);
 
             $data = $request->except('_token');
@@ -281,6 +285,7 @@ class PengajuanSuratController extends Controller
                 'judul_penelitian' => 'required',
                 'awal_penelitian' => 'required',
                 'akhir_penelitian' => 'required',
+                'foto_ktp' => 'nullable|image|max:2048'
             ]);
 
             $data = $request->except('_token');
@@ -290,14 +295,14 @@ class PengajuanSuratController extends Controller
 
         $foto_ktp = $request->file('foto_ktp')->store('surat_keterangan', 'public');
 
-        $url_foto_ktp = $foto_ktp->path;
+
 
 
         PengajuanSurat::create([
             'masyarakat_id' => Auth::user()->id,
             'jenis_surat' => $data['jenis_surat'],
             'surat' => json_encode($data),
-
+            'foto_ktp' => $foto_ktp,
             'status' => 'Pending'
         ]);
 
@@ -410,8 +415,9 @@ class PengajuanSuratController extends Controller
                 'pekerjaan' => 'required',
                 'alamat' => 'required',
                 'keperluan' => 'required',
+                'keterangan_surat' => 'required',
                 'nomor_surat' => 'required',
-                'foto_ktp' => 'required',
+                'foto_ktp' => 'nullable|image|max:2048'
             ]);
 
             $data = $request->except('_token');
@@ -584,6 +590,7 @@ class PengajuanSuratController extends Controller
                 'lama_usaha' => 'required',
                 'nama_usaha' => 'required',
                 'nomor_surat' => 'required',
+                'foto_ktp' => 'nullable|image|max:2048'
 
             ]);
 
@@ -600,6 +607,7 @@ class PengajuanSuratController extends Controller
                 'nomor_surat' => 'required',
                 'rt' => 'required',
                 'rw' => 'required',
+                'foto_ktp' => 'nullable|image|max:2048'
 
 
             ]);
@@ -613,6 +621,7 @@ class PengajuanSuratController extends Controller
                 'alamat' => 'required',
                 'nik' => 'required',
                 'nomor_surat' => 'required',
+                'foto_ktp' => 'nullable|image|max:2048'
 
             ]);
 
@@ -627,6 +636,7 @@ class PengajuanSuratController extends Controller
                 'awal_penelitian' => 'required',
                 'akhir_penelitian' => 'required',
                 'nomor_surat' => 'required',
+                'foto_ktp' => 'nullable|image|max:2048'
             ]);
 
             $data = $request->except('_token');

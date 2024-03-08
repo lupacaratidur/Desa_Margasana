@@ -123,16 +123,20 @@
                     <tr>
                         <td>{{ $surat->keterangan_surat }} <br> <br></td>
                     </tr>
+
                     <tr>
                         <td class="w-[40%] lg:w-[15%] font-bold">
                             Foto KTP
                         </td>
                     </tr>
+
                     <tr>
-                        <td> <img src="{{ asset($url_foto_ktp) }}" alt="Foto KTP">
+                        <td>
+                            <img src="{{ asset('storage/' . $pengajuan_surat->foto_ktp) }}" alt="Foto KTP">
                             <br> <br>
                         </td>
                     </tr>
+
                 </table>
             </div>
         </div>
@@ -1302,6 +1306,17 @@
                     <tr>
                         <td>{{ $surat->nama_usaha }} <br> <br></td>
                     </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Foto KTP
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="{{ asset('storage/' . $pengajuan_surat->foto_ktp) }}" alt="Foto KTP">
+                            <br> <br>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -1426,6 +1441,17 @@
                     <tr>
                         <td>{{ $surat->nik }} <br> <br></td>
                     </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Foto KTP
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="{{ asset('storage/' . $pengajuan_surat->foto_ktp) }}" alt="Foto KTP">
+                            <br> <br>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -1491,6 +1517,17 @@
                     </tr>
                     <tr>
                         <td>{{ $surat->judul_penelitian }} <br> <br></td>
+                    </tr>
+                    <tr>
+                        <td class="w-[40%] lg:w-[15%] font-bold">
+                            Foto KTP
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="{{ asset('storage/' . $pengajuan_surat->foto_ktp) }}" alt="Foto KTP">
+                            <br> <br>
+                        </td>
                     </tr>
                 </table>
             </div>
